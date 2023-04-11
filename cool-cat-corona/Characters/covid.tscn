@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv4a0abpd66jf"]
+
+[ext_resource type="Script" path="res://Characters/covid.gd" id="1_1j74e"]
+[ext_resource type="Texture2D" uid="uid://b8lmrqi8a62iu" path="res://art/SARS-CoV-2_without_background.png" id="1_jc3ni"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_occse"]
+radius = 40.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ouvo"]
+radius = 68.0294
+
+[node name="Covid" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.0
+max_contacts_reported = 2
+contact_monitor = true
+script = ExtResource("1_1j74e")
+speed = 300.0
+
+[node name="Sars-coV-2WithoutBackground" type="Sprite2D" parent="."]
+position = Vector2(-2.99999, 5.99997)
+scale = Vector2(0.113333, 0.126874)
+texture = ExtResource("1_jc3ni")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 9)
+shape = SubResource("CircleShape2D_occse")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-2, 2)
+scale = Vector2(2.55, 2.3)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="Hitbox" type="CollisionShape2D" parent="Area2D" groups=["BadTouch"]]
+position = Vector2(-1, 9)
+shape = SubResource("CircleShape2D_6ouvo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

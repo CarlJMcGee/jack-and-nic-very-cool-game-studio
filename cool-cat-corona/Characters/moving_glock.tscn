@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://rroby2shy2on"]
+
+[ext_resource type="PackedScene" uid="uid://bp0ujel6nh1fa" path="res://Characters/glockmaster_5000.tscn" id="1_liev2"]
+
+[sub_resource type="Curve2D" id="Curve2D_yq1cd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -6, 5, 0, 0, 0, 0, -8, 746, 0, 0, 0, 0, -6, 5)
+}
+point_count = 3
+
+[node name="MovingGlock" type="Path2D"]
+position = Vector2(0, 8)
+curve = SubResource("Curve2D_yq1cd")
+
+[node name="MoveGlockPath" type="PathFollow2D" parent="."]
+position = Vector2(-6, 5)
+rotates = false
+
+[node name="Glockmaster5000" parent="MoveGlockPath" instance=ExtResource("1_liev2")]
+move_speed = 5000.0

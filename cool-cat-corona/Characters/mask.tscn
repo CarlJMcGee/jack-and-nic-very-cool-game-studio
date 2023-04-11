@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxgjl7ia4bxlu"]
+
+[ext_resource type="Texture2D" uid="uid://d3ngwxpj3nuwr" path="res://art/MaskSprite.png" id="1_0m31p"]
+[ext_resource type="Script" path="res://Characters/mask.gd" id="1_v571f"]
+[ext_resource type="PackedScene" uid="uid://cs35tdus58bmj" path="res://Characters/Victory.tscn" id="2_dlbwe"]
+[ext_resource type="AudioStream" uid="uid://b3ex6qgd6qumj" path="res://music/Victory.ogg" id="4_2f13l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ssnrx"]
+radius = 29.0
+height = 104.0
+
+[node name="Mask" type="Area2D" groups=["GoodV"]]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_v571f")
+Victory = ExtResource("2_dlbwe")
+
+[node name="MaskSprite" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(1.3481, 1.63636)
+texture = ExtResource("1_0m31p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["GoodV"]]
+position = Vector2(-1, 5)
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_ssnrx")
+
+[node name="VictorySong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_2f13l")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="finished" from="VictorySong" to="." method="_on_victory_song_finished"]
