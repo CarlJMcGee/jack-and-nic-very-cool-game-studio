@@ -1,5 +1,7 @@
 extends Area2D
 
+signal hit
+
 @export var speed = 400
 var screenSize
 
@@ -30,3 +32,16 @@ func _process(delta):
 	position += vel * delta
 	position.x = clamp(position.x, 0, screenSize.x)
 	position.y = clamp(position.y, 0, screenSize.y)
+
+func _on_body_entered(body):
+	$CrashFX.play()
+	hide()
+	hit.emit()
+
+	$CollisionShape2D.set_deferred("disabled", true)
+
+func start(pos):
+	position = pos
+	show()
+
+	$CollisionShape2D.disabled = false

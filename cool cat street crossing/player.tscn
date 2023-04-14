@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckuja8ss81t7q"]
+[gd_scene load_steps=6 format=3 uid="uid://ckuja8ss81t7q"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_efbe2"]
+[ext_resource type="AudioStream" uid="uid://cfa7sqfrxpt36" path="res://audio/Car Crash Sound Effect.wav" id="2_5ko1u"]
 [ext_resource type="Texture2D" uid="uid://bthpixc8xpdp6" path="res://sprites/cool cat/running.png" id="2_jkcoq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2rkf5"]
@@ -20,6 +21,9 @@ size = Vector2(138, 261)
 [node name="Player" type="Area2D"]
 script = ExtResource("1_efbe2")
 
+[node name="CrashFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_5ko1u")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.999969, -2)
 scale = Vector2(0.334951, 0.334951)
@@ -28,3 +32,5 @@ sprite_frames = SubResource("SpriteFrames_2rkf5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -1.5)
 shape = SubResource("RectangleShape2D_s7ovo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
