@@ -46,6 +46,7 @@ radius = 72.0
 height = 344.0
 
 [node name="Car" type="RigidBody2D"]
+scale = Vector2(0.727912, 0.727912)
 collision_mask = 0
 gravity_scale = 0.0
 max_contacts_reported = 1
