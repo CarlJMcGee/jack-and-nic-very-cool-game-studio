@@ -16,3 +16,11 @@ texture = ExtResource("1_yrumu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 77.5)
 shape = SubResource("RectangleShape2D_w4mlq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+offset_left = -132.0
+offset_top = 48.0
+offset_right = 129.0
+offset_bottom = 175.0
+color = Color(0.52549, 0.443137, 0, 1)
