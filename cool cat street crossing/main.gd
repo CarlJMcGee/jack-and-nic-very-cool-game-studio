@@ -42,7 +42,7 @@ func _on_car_timer_timeout():
 		car.get_node("AnimatedSprite2D").flip_h = false
 		
 	elif (spawn_lane.name.contains("West")):
-		car.linear_velocity = Vector2(speed_limit - 2 * speed_limit, 0.0)
+		car.linear_velocity = Vector2(speed_limit * -1, 0.0)
 		car.get_node("AnimatedSprite2D").flip_h = true
 
 
