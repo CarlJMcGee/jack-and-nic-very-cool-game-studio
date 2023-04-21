@@ -69,7 +69,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fi77g"]
-radius = 72.0
+radius = 32.971
 height = 344.0
 
 [node name="Car" type="RigidBody2D"]
@@ -87,7 +87,7 @@ sprite_frames = SubResource("SpriteFrames_r5nbp")
 animation = &"car 1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
+position = Vector2(0, 21.9807)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_fi77g")
 
