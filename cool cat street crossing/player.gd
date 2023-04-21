@@ -24,6 +24,11 @@ func _process(delta):
 		vel.x -= 1
 
 	if vel.length() > 0:
+		if vel.x > 0:
+			$AnimatedSprite2D.flip_h= true
+		if vel.x < 0:
+			$AnimatedSprite2D.flip_h = false
+		
 		vel = vel.normalized() * speed
 		$AnimatedSprite2D.play()
 	else:
