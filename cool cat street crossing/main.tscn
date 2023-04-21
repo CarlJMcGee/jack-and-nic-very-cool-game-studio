@@ -38,19 +38,19 @@ position = Vector2(1152, 160)
 [node name="Westbound2" type="Marker2D" parent="."]
 position = Vector2(1152, 288)
 
-[node name="Car" parent="." instance=ExtResource("2_gucs7")]
+[node name="Car" parent="." groups=["cars"] instance=ExtResource("2_gucs7")]
 position = Vector2(-7.62939e-06, 480)
 linear_velocity = Vector2(150, 0)
 
-[node name="Car2" parent="." instance=ExtResource("2_gucs7")]
+[node name="Car2" parent="." groups=["cars"] instance=ExtResource("2_gucs7")]
 position = Vector2(200, 352)
 linear_velocity = Vector2(150, 0)
 
-[node name="Car3" parent="." instance=ExtResource("2_gucs7")]
+[node name="Car3" parent="." groups=["cars"] instance=ExtResource("2_gucs7")]
 position = Vector2(1152, 160)
 linear_velocity = Vector2(-150, 0)
 
-[node name="Car4" parent="." instance=ExtResource("2_gucs7")]
+[node name="Car4" parent="." groups=["cars"] instance=ExtResource("2_gucs7")]
 position = Vector2(888, 288)
 linear_velocity = Vector2(-150, 0)
 
@@ -58,10 +58,8 @@ linear_velocity = Vector2(-150, 0)
 position = Vector2(576, 48)
 scale = Vector2(0.11232, 0.11232)
 
-[node name="ButchStart" type="Marker2D" parent="."]
-position = Vector2(576, 48)
-
+[connection signal="reset" from="HUD" to="." method="new_game"]
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="CarTimer" to="." method="_on_car_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
-[connection signal="body_entered" from="Butch" to="." method="you_win"]
+[connection signal="hit" from="Butch" to="." method="you_win"]

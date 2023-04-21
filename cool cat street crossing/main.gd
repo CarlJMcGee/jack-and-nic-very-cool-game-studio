@@ -15,32 +15,40 @@ func _process(delta):
 func clearScreen():
 	$HUD.get_node("WinLabel").hide()
 	$HUD.get_node("LoseLabel").hide()
+	$HUD.get_node("RestartBtn").hide()
 	$Player.hide()
-	$Car.hide()
-	$Car2.hide()
-	$Car3.hide()
-	$Car4.hide()
+	# for car in get_tree().get_nodes_in_group("cars"):
+	# 	if is_instance_valid(car):
+	# 		car.queue_free()
 
 func game_over():
 	$CarTimer.stop()
 	$HUD.get_node("LoseLabel").show()
 	$Butch.get_node("AnimatedSprite2D").play("laugh")
+	$HUD.get_node("RestartBtn").show()
 
 func you_win():
 	$CarTimer.stop()
+	for car in get_tree().get_nodes_in_group("cars"):
+		if is_instance_valid(car):
+			car.queue_free()
 	$HUD.get_node("WinLabel").show()
+	$HUD.get_node("RestartBtn").show()
 	
 func new_game():
 	clearScreen()
 	$Butch.get_node("AnimatedSprite2D").play("default")
 	$Player.start($StartPos.position)
 	$CarTimer.start()
-	$Car.show()
-	$Car2.show()
-	$Car3.show()
-	$Car3.get_node("AnimatedSprite2D").flip_h = true
-	$Car4.show()
-	$Car4.get_node("AnimatedSprite2D").flip_h = true
+	# $Car.show()
+	# $Car2.show()
+	# $Car3.show()
+	if is_instance_valid($Car3):
+		$Car3.get_node("AnimatedSprite2D").flip_h = true
+
+	# $Car4.show()
+	if is_instance_valid($Car4):
+		$Car4.get_node("AnimatedSprite2D").flip_h = true
 	# $StartTimer.start()
 
 func _on_start_timer_timeout():
@@ -55,6 +63,7 @@ func _on_start_timer_timeout():
 
 func _on_car_timer_timeout():
 	var car = car_scene.instantiate()
+	car.add_to_group("cars")
 	var lanes = ["Eastbound1", "Eastbound2", "Westbound1", "Westbound2"]
 	var spawn_lane = get_node(lanes[randi_range(0, lanes.size() - 1)])
 	car.position = spawn_lane.position

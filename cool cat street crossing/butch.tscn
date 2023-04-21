@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://w15ldiu8uaid"]
+[gd_scene load_steps=9 format=3 uid="uid://w15ldiu8uaid"]
 
 [ext_resource type="Texture2D" uid="uid://clf2luohudlcr" path="res://sprites/butch/cool cat butch 1.png" id="1_1sbto"]
+[ext_resource type="Script" path="res://butch.gd" id="1_x62gb"]
 [ext_resource type="Texture2D" uid="uid://d3wef62jarebu" path="res://sprites/butch/cool cat butch 2.png" id="2_6ru4b"]
 [ext_resource type="Texture2D" uid="uid://nuoanxd2ggno" path="res://sprites/butch/cool cat butch laugh 0.png" id="3_hrmls"]
 [ext_resource type="Texture2D" uid="uid://2af3yl7cd37n" path="res://sprites/butch/cool cat butch laugh 1.png" id="4_35hns"]
@@ -39,6 +40,7 @@ size = Vector2(640, 1104)
 
 [node name="Butch" type="Area2D"]
 scale = Vector2(0.214425, 0.214425)
+script = ExtResource("1_x62gb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lygb2")
@@ -47,3 +49,6 @@ frame_progress = 0.585158
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(24, 16)
 shape = SubResource("RectangleShape2D_8ushw")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
