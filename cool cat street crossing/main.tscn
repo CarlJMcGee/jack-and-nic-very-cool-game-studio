@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7yhi67m8lkke"]
+[gd_scene load_steps=6 format=3 uid="uid://c7yhi67m8lkke"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_8atkc"]
 [ext_resource type="PackedScene" uid="uid://ckuja8ss81t7q" path="res://player.tscn" id="2_1b5wg"]
 [ext_resource type="PackedScene" uid="uid://jrc4u610hqo5" path="res://car.tscn" id="2_gucs7"]
+[ext_resource type="PackedScene" uid="uid://w15ldiu8uaid" path="res://butch.tscn" id="4_w45vk"]
+[ext_resource type="PackedScene" uid="uid://dda5ooysyjd0d" path="res://hud.tscn" id="5_i2h2e"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8atkc")
 car_scene = ExtResource("2_gucs7")
+
+[node name="HUD" parent="." instance=ExtResource("5_i2h2e")]
 
 [node name="Player" parent="." instance=ExtResource("2_1b5wg")]
 position = Vector2(568, 632)
@@ -44,14 +48,20 @@ linear_velocity = Vector2(150, 0)
 
 [node name="Car3" parent="." instance=ExtResource("2_gucs7")]
 position = Vector2(1152, 160)
-scale = Vector2(-0.721, 0.728)
 linear_velocity = Vector2(-150, 0)
 
 [node name="Car4" parent="." instance=ExtResource("2_gucs7")]
 position = Vector2(888, 288)
-scale = Vector2(-0.721, 0.728)
 linear_velocity = Vector2(-150, 0)
+
+[node name="Butch" parent="." instance=ExtResource("4_w45vk")]
+position = Vector2(576, 48)
+scale = Vector2(0.11232, 0.11232)
+
+[node name="ButchStart" type="Marker2D" parent="."]
+position = Vector2(576, 48)
 
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="CarTimer" to="." method="_on_car_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="body_entered" from="Butch" to="." method="you_win"]

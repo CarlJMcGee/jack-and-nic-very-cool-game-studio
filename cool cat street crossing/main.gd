@@ -12,16 +12,36 @@ func _ready():
 func _process(delta):
 	pass
 
-func game_over():
-	$CarTimer.stop()
-
-func new_game():
+func clearScreen():
+	$HUD.get_node("WinLabel").hide()
+	$HUD.get_node("LoseLabel").hide()
 	$Player.hide()
 	$Car.hide()
 	$Car2.hide()
 	$Car3.hide()
 	$Car4.hide()
-	$StartTimer.start()
+
+func game_over():
+	$CarTimer.stop()
+	$HUD.get_node("LoseLabel").show()
+	$Butch.get_node("AnimatedSprite2D").play("laugh")
+
+func you_win():
+	$CarTimer.stop()
+	$HUD.get_node("WinLabel").show()
+	
+func new_game():
+	clearScreen()
+	$Butch.get_node("AnimatedSprite2D").play("default")
+	$Player.start($StartPos.position)
+	$CarTimer.start()
+	$Car.show()
+	$Car2.show()
+	$Car3.show()
+	$Car3.get_node("AnimatedSprite2D").flip_h = true
+	$Car4.show()
+	$Car4.get_node("AnimatedSprite2D").flip_h = true
+	# $StartTimer.start()
 
 func _on_start_timer_timeout():
 	$Player.start($StartPos.position)
@@ -29,7 +49,9 @@ func _on_start_timer_timeout():
 	$Car.show()
 	$Car2.show()
 	$Car3.show()
+	$Car3.get_node("AnimatedSprite2D").flip_h = true
 	$Car4.show()
+	$Car4.get_node("AnimatedSprite2D").flip_h = true
 
 func _on_car_timer_timeout():
 	var car = car_scene.instantiate()
@@ -48,3 +70,7 @@ func _on_car_timer_timeout():
 
 
 	add_child(car)
+
+
+
+
