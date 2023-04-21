@@ -88,7 +88,6 @@ position = Vector2(292, 166)
 scale = Vector2(0.539063, 0.539063)
 texture = ExtResource("1_i0e3o")
 hframes = 3
-frame = 2
 
 [node name="Marker2D" type="Marker2D" parent="Glockmaster5000"]
 position = Vector2(-446.361, -211.268)
