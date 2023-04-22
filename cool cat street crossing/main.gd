@@ -80,6 +80,5 @@ func _on_car_timer_timeout():
 
 	add_child(car)
 
-
-
-
+func _on_reset():
+	get_tree().reload_current_scene()
