@@ -19,6 +19,7 @@ texture = ExtResource("3_l1tkh")
 [node name="HUD" parent="." instance=ExtResource("5_i2h2e")]
 
 [node name="Player" parent="." instance=ExtResource("2_1b5wg")]
+z_index = 2
 position = Vector2(568, 632)
 scale = Vector2(0.493758, 0.493758)
 
@@ -33,7 +34,7 @@ one_shot = true
 position = Vector2(568, 632)
 
 [node name="Eastbound1" type="Marker2D" parent="."]
-position = Vector2(0, 384)
+position = Vector2(0, 360)
 
 [node name="Eastbound2" type="Marker2D" parent="."]
 position = Vector2(0, 480)
@@ -42,14 +43,14 @@ position = Vector2(0, 480)
 position = Vector2(1152, 128)
 
 [node name="Westbound2" type="Marker2D" parent="."]
-position = Vector2(1152, 232)
+position = Vector2(1152, 240)
 
 [node name="Car" parent="." groups=["cars"] instance=ExtResource("2_gucs7")]
 position = Vector2(-7.62939e-06, 480)
 linear_velocity = Vector2(150, 0)
 
 [node name="Car2" parent="." groups=["cars"] instance=ExtResource("2_gucs7")]
-position = Vector2(200, 384)
+position = Vector2(200, 360)
 linear_velocity = Vector2(150, 0)
 
 [node name="Car3" parent="." groups=["cars"] instance=ExtResource("2_gucs7")]
@@ -57,7 +58,7 @@ position = Vector2(1152, 128)
 linear_velocity = Vector2(-150, 0)
 
 [node name="Car4" parent="." groups=["cars"] instance=ExtResource("2_gucs7")]
-position = Vector2(984, 232)
+position = Vector2(984, 240)
 linear_velocity = Vector2(-150, 0)
 
 [node name="Butch" parent="." instance=ExtResource("4_w45vk")]

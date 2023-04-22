@@ -28,6 +28,9 @@ offset_bottom = 84.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_ktaai")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 35
 text = "You Win!
 Butch the Bully has been arrested on multiple counts of 1st degree bullying and one count of posession with intent to sell"
@@ -47,6 +50,8 @@ offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_nhu4v")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 50
 text = "Cool Cat has died.
 Game Over"
@@ -68,6 +73,6 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_oufdj")
 theme_override_font_sizes/font_size = 50
-text = "restart"
+text = "Replay?"
 
 [connection signal="pressed" from="RestartBtn" to="." method="_on_restart_btn_pressed"]
