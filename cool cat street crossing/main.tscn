@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7yhi67m8lkke"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_8atkc"]
+[ext_resource type="PackedScene" uid="uid://ckuja8ss81t7q" path="res://player.tscn" id="2_1b5wg"]
+[ext_resource type="PackedScene" uid="uid://jrc4u610hqo5" path="res://car.tscn" id="2_gucs7"]
+[ext_resource type="Texture2D" uid="uid://bqdbjudjacvrd" path="res://art/Cool Cat Street.png" id="3_l1tkh"]
+[ext_resource type="PackedScene" uid="uid://w15ldiu8uaid" path="res://butch.tscn" id="4_w45vk"]
+[ext_resource type="PackedScene" uid="uid://dda5ooysyjd0d" path="res://hud.tscn" id="5_i2h2e"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_8atkc")
+car_scene = ExtResource("2_gucs7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("3_l1tkh")
+
+[node name="HUD" parent="." instance=ExtResource("5_i2h2e")]
+
+[node name="Player" parent="." instance=ExtResource("2_1b5wg")]
+z_index = 2
+position = Vector2(568, 632)
+scale = Vector2(0.493758, 0.493758)
+
+[node name="CarTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StartPos" type="Marker2D" parent="."]
+position = Vector2(568, 632)
+
+[node name="Eastbound1" type="Marker2D" parent="."]
+position = Vector2(0, 360)
+
+[node name="Eastbound2" type="Marker2D" parent="."]
+position = Vector2(0, 480)
+
+[node name="Westbound1" type="Marker2D" parent="."]
+position = Vector2(1152, 128)
+
+[node name="Westbound2" type="Marker2D" parent="."]
+position = Vector2(1152, 240)
+
+[node name="Car" parent="." groups=["cars"] instance=ExtResource("2_gucs7")]
+position = Vector2(-7.62939e-06, 480)
+linear_velocity = Vector2(150, 0)
+
+[node name="Car2" parent="." groups=["cars"] instance=ExtResource("2_gucs7")]
+position = Vector2(200, 360)
+linear_velocity = Vector2(150, 0)
+
+[node name="Car3" parent="." groups=["cars"] instance=ExtResource("2_gucs7")]
+position = Vector2(1152, 128)
+linear_velocity = Vector2(-150, 0)
+
+[node name="Car4" parent="." groups=["cars"] instance=ExtResource("2_gucs7")]
+position = Vector2(984, 240)
+linear_velocity = Vector2(-150, 0)
+
+[node name="Butch" parent="." instance=ExtResource("4_w45vk")]
+position = Vector2(576, 48)
+scale = Vector2(0.11232, 0.11232)
+
+[connection signal="reset" from="HUD" to="." method="_on_reset"]
+[connection signal="hit" from="Player" to="." method="game_over"]
+[connection signal="timeout" from="CarTimer" to="." method="_on_car_timer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="hit" from="Butch" to="." method="you_win"]

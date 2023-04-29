@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://dda5ooysyjd0d"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_r317x"]
+[ext_resource type="FontFile" uid="uid://wqrrkvxvj2m8" path="res://fonts/Oswald-VariableFont_wght.ttf" id="1_w25rk"]
+
+[sub_resource type="Theme" id="Theme_ktaai"]
+default_font = ExtResource("1_w25rk")
+
+[sub_resource type="Theme" id="Theme_nhu4v"]
+default_font = ExtResource("1_w25rk")
+
+[sub_resource type="Theme" id="Theme_oufdj"]
+default_font = ExtResource("1_w25rk")
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_r317x")
+
+[node name="WinLabel" type="Label" parent="."]
+visible = false
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 128.0
+offset_top = -84.0
+offset_right = -128.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ktaai")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 35
+text = "You Win!
+Butch the Bully has been arrested on multiple counts of 1st degree bullying and one count of posession with intent to sell"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+text_direction = 1
+
+[node name="LoseLabel" type="Label" parent="."]
+visible = false
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -38.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_nhu4v")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 50
+text = "Cool Cat has died.
+Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartBtn" type="Button" parent="."]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -144.0
+offset_top = -168.0
+offset_right = 144.0
+offset_bottom = -97.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_oufdj")
+theme_override_font_sizes/font_size = 50
+text = "Replay?"
+
+[connection signal="pressed" from="RestartBtn" to="." method="_on_restart_btn_pressed"]
