@@ -1,3 +1,76 @@
-[gd_scene format=3 uid="uid://de10cffdqxukf"]
+[gd_scene load_steps=4 format=3 uid="uid://de10cffdqxukf"]
+
+[ext_resource type="Texture2D" uid="uid://bpgbv8l25ej0q" path="res://Art/Breen_Back.png" id="1_sodew"]
+[ext_resource type="Texture2D" uid="uid://d16qa2vo6565j" path="res://Art/CoolcatMainSprite.png" id="2_1oumf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4cho"]
+size = Vector2(104, 172)
 
 [node name="Node2D" type="Node2D"]
+
+[node name="BreenBack" type="Sprite2D" parent="."]
+position = Vector2(576.5, 329)
+scale = Vector2(1.12573, 1.24231)
+texture = ExtResource("1_sodew")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CoolcatMainSprite" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(558, 547)
+scale = Vector2(0.215686, 0.246234)
+texture = ExtResource("2_1oumf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+polygon = PackedVector2Array(520, 449, 586, 446, 588, 469, 606, 529, 658, 574, 608, 654, 521, 661, 467, 598, 467, 566, 509, 533, 505, 499, 514, 482)
+
+[node name="Terror1" type="RigidBody2D" parent="." groups=["Terrorist"]]
+position = Vector2(188, 485)
+
+[node name="ColorRect" type="ColorRect" parent="Terror1"]
+offset_left = -29.0
+offset_top = -18.0
+offset_right = 74.0
+offset_bottom = 153.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terror1"]
+position = Vector2(22, 69)
+shape = SubResource("RectangleShape2D_a4cho")
+
+[node name="Terror2" type="RigidBody2D" parent="." groups=["Terrorist"]]
+position = Vector2(933, 452)
+
+[node name="ColorRect" type="ColorRect" parent="Terror2"]
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 110.0
+offset_bottom = 177.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terror2"]
+position = Vector2(58, 92)
+shape = SubResource("RectangleShape2D_a4cho")
+
+[node name="Terror3" type="RigidBody2D" parent="." groups=["Terrorist"]]
+position = Vector2(421, 38)
+
+[node name="ColorRect" type="ColorRect" parent="Terror3"]
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 110.0
+offset_bottom = 177.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terror3"]
+position = Vector2(58, 92)
+shape = SubResource("RectangleShape2D_a4cho")
+
+[node name="Terror4" type="RigidBody2D" parent="." groups=["Terrorist"]]
+position = Vector2(585, 31)
+
+[node name="ColorRect" type="ColorRect" parent="Terror4"]
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 110.0
+offset_bottom = 177.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terror4"]
+position = Vector2(58, 92)
+shape = SubResource("RectangleShape2D_a4cho")
