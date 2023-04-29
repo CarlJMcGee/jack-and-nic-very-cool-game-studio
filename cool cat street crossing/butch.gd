@@ -14,14 +14,12 @@ func _process(delta):
 
 
 func _on_body_entered(body:Node2D):
-	print('hit')
 	$AnimatedSprite2D.stop()
 	hit.emit()
 	$CollisionShape2D.set_deferred("disabled", true)
 
 
 func _on_area_entered(area:Area2D):
-	print('hit')
 	$AnimatedSprite2D.stop()
 	hit.emit()
 	$CollisionShape2D.set_deferred("disabled", true)

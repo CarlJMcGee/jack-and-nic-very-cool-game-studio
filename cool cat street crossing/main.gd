@@ -17,9 +17,6 @@ func clearScreen():
 	$HUD.get_node("LoseLabel").hide()
 	$HUD.get_node("RestartBtn").hide()
 	$Player.hide()
-	# for car in get_tree().get_nodes_in_group("cars"):
-	# 	if is_instance_valid(car):
-	# 		car.queue_free()
 
 func game_over():
 	$CarTimer.stop()
@@ -40,26 +37,12 @@ func new_game():
 	$Butch.get_node("AnimatedSprite2D").play("default")
 	$Player.start($StartPos.position)
 	$CarTimer.start()
-	# $Car.show()
-	# $Car2.show()
-	# $Car3.show()
+	
 	if is_instance_valid($Car3):
 		$Car3.get_node("AnimatedSprite2D").flip_h = true
 
-	# $Car4.show()
 	if is_instance_valid($Car4):
 		$Car4.get_node("AnimatedSprite2D").flip_h = true
-	# $StartTimer.start()
-
-func _on_start_timer_timeout():
-	$Player.start($StartPos.position)
-	$CarTimer.start()
-	$Car.show()
-	$Car2.show()
-	$Car3.show()
-	$Car3.get_node("AnimatedSprite2D").flip_h = true
-	$Car4.show()
-	$Car4.get_node("AnimatedSprite2D").flip_h = true
 
 func _on_car_timer_timeout():
 	var car = car_scene.instantiate()
