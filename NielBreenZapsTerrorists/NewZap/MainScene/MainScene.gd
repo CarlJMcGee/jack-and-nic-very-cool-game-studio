@@ -7,3 +7,7 @@ func _input(event):
 		if get_rect().has_point(to_local(event.position)):
 				print("A click!")
 				"""
+
+
+func _on_rigid_body_2d_youlose():
+	pass # Replace with function body.

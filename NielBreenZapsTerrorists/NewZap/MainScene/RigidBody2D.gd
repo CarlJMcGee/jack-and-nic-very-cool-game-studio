@@ -5,7 +5,6 @@ signal youlose
 
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
-	if event is InputEventAction:
-		if Input.is_action_just_pressed("click"):
-			print("game over time")
-	
+	if Input.is_action_just_pressed("Click"):
+		print("game over time")
+
