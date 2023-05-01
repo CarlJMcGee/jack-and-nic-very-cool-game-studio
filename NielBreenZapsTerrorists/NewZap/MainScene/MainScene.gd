@@ -10,4 +10,6 @@ func _input(event):
 
 
 func _on_rigid_body_2d_youlose():
-	pass # Replace with function body.
+	pass
+
+

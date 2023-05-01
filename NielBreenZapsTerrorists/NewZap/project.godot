@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Jack-and-nic-very-cool-game-studio"
-run/main_scene="res://MainScene/MainScene.tscn"
+run/main_scene="res://Leadin/Leadin.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
