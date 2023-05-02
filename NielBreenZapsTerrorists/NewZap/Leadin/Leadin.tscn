@@ -76,3 +76,6 @@ scale = Vector2(0.612613, 0.598194)
 texture = ExtResource("3_qpf5h")
 
 [node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="countdown" type="Timer" parent="."]

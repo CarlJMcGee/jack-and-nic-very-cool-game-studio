@@ -1,5 +1,5 @@
 extends Node2D
-signal youlose
+
 
 """
 func _input(event):
