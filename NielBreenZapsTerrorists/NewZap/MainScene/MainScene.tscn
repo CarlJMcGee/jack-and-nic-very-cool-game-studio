@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://l1uabw3a7f60" path="res://Art/terror_UR.png" id="11_3vbkm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4cho"]
-size = Vector2(107, 175.25)
+size = Vector2(107, 212.625)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_viohv")
@@ -48,12 +48,12 @@ script = ExtResource("7_f38m3")
 position = Vector2(-79, -64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terror1/Area2D"]
-position = Vector2(111, 142.75)
+position = Vector2(111, 124.688)
 shape = SubResource("RectangleShape2D_a4cho")
 
 [node name="TerroristBl" type="Sprite2D" parent="Terror1"]
-position = Vector2(38, 74.75)
-scale = Vector2(1, 1.02096)
+position = Vector2(30, 62)
+scale = Vector2(1.126, 1.242)
 texture = ExtResource("8_68iaa")
 
 [node name="Terror2" type="RigidBody2D" parent="." groups=["Terrorist"]]
@@ -68,7 +68,7 @@ shape = SubResource("RectangleShape2D_a4cho")
 
 [node name="TerroristBr" type="Sprite2D" parent="Terror2"]
 position = Vector2(69.0001, 84)
-scale = Vector2(1.1371, 1.24176)
+scale = Vector2(1.126, 1.242)
 texture = ExtResource("9_lq35u")
 
 [node name="Terror3" type="RigidBody2D" parent="." groups=["Terrorist"]]
@@ -78,11 +78,11 @@ gravity_scale = 0.0
 [node name="Area2D" type="Area2D" parent="Terror3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terror3/Area2D"]
-position = Vector2(96, 94)
+position = Vector2(104, 92)
 shape = SubResource("RectangleShape2D_a4cho")
 
 [node name="TerroristUm" type="Sprite2D" parent="Terror3"]
-position = Vector2(102, 95)
+position = Vector2(106, 93)
 scale = Vector2(1.126, 1.242)
 texture = ExtResource("10_4hbm4")
 
@@ -97,8 +97,8 @@ position = Vector2(64.5, 72.375)
 shape = SubResource("RectangleShape2D_a4cho")
 
 [node name="TerrorUr" type="Sprite2D" parent="Terror4"]
-position = Vector2(64.5, 88)
-scale = Vector2(1.11458, 1.21429)
+position = Vector2(68, 86)
+scale = Vector2(1.126, 1.242)
 texture = ExtResource("11_3vbkm")
 
 [connection signal="youlose" from="RigidBody2D" to="." method="_on_rigid_body_2d_youlose"]
