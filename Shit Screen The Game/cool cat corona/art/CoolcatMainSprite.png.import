@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dngqcmd44ffgm"
-path="res://.godot/imported/CoolcatMainSprite.png-953918ac4888462b4499ccc491e66305.ctex"
+path="res://.godot/imported/CoolcatMainSprite.png-4117409e613a7d4b5c94723d69751bfa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/CoolcatMainSprite.png"
-dest_files=["res://.godot/imported/CoolcatMainSprite.png-953918ac4888462b4499ccc491e66305.ctex"]
+source_file="res://cool cat corona/art/CoolcatMainSprite.png"
+dest_files=["res://.godot/imported/CoolcatMainSprite.png-4117409e613a7d4b5c94723d69751bfa.ctex"]
 
 [params]
 

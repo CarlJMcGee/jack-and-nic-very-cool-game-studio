@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dy2dnpgqx7ip1"
-path="res://.godot/imported/7-72375_white-picket-fence-white-picket-fence-png.jpg-9ca6e103b7d9c9fe99826581b939d20f.ctex"
+path="res://.godot/imported/7-72375_white-picket-fence-white-picket-fence-png.jpg-ee34b1c049a8be43d8416198d1da0e9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/7-72375_white-picket-fence-white-picket-fence-png.jpg"
-dest_files=["res://.godot/imported/7-72375_white-picket-fence-white-picket-fence-png.jpg-9ca6e103b7d9c9fe99826581b939d20f.ctex"]
+source_file="res://cool cat corona/art/7-72375_white-picket-fence-white-picket-fence-png.jpg"
+dest_files=["res://.godot/imported/7-72375_white-picket-fence-white-picket-fence-png.jpg-ee34b1c049a8be43d8416198d1da0e9a.ctex"]
 
 [params]
 

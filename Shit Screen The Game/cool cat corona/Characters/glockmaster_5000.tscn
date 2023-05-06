@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://bp0ujel6nh1fa"]
 
-[ext_resource type="Script" path="res://Characters/glockmaster_5000.gd" id="1_gypby"]
-[ext_resource type="Texture2D" uid="uid://s6in0djbj1qt" path="res://art/Glockmaster5000.png" id="1_i0e3o"]
-[ext_resource type="PackedScene" uid="uid://dv4a0abpd66jf" path="res://Characters/covid.tscn" id="2_jlswx"]
-[ext_resource type="Texture2D" uid="uid://bq5vq60wtykiq" path="res://art/GlockImage3_AnnimateTry2.png" id="4_t8nqp"]
+[ext_resource type="Texture2D" uid="uid://s6in0djbj1qt" path="res://cool cat corona/art/Glockmaster5000.png" id="1_i0e3o"]
+[ext_resource type="Script" path="res://cool cat corona/Characters/glockmaster_5000.gd" id="1_sir4m"]
+[ext_resource type="PackedScene" uid="uid://dv4a0abpd66jf" path="res://cool cat corona/Characters/covid.tscn" id="2_jlswx"]
+[ext_resource type="Texture2D" uid="uid://bq5vq60wtykiq" path="res://cool cat corona/art/GlockImage3_AnnimateTry2.png" id="4_t8nqp"]
 
 [sub_resource type="Animation" id="Animation_x1tim"]
 resource_name = "Idle"
@@ -81,7 +81,7 @@ size = Vector2(437, 300)
 size = Vector2(43, 6.5)
 
 [node name="Glockmaster5000" type="CharacterBody2D"]
-script = ExtResource("1_gypby")
+script = ExtResource("1_sir4m")
 bullet = ExtResource("2_jlswx")
 
 [node name="Glockmaster5000" type="Sprite2D" parent="."]

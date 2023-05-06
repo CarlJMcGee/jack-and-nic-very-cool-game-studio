@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://byx08arog2iyl"
-path="res://.godot/imported/CoolCatTheme.mp3-e0162e133ee402eca5d5297d0b0bdeec.mp3str"
+path="res://.godot/imported/CoolCatTheme.mp3-9cdaca0b557e641db99458bab302ec82.mp3str"
 
 [deps]
 
-source_file="res://music/CoolCatTheme.mp3"
-dest_files=["res://.godot/imported/CoolCatTheme.mp3-e0162e133ee402eca5d5297d0b0bdeec.mp3str"]
+source_file="res://cool cat corona/music/CoolCatTheme.mp3"
+dest_files=["res://.godot/imported/CoolCatTheme.mp3-9cdaca0b557e641db99458bab302ec82.mp3str"]
 
 [params]
 

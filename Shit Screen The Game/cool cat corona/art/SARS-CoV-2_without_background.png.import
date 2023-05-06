@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8lmrqi8a62iu"
-path="res://.godot/imported/SARS-CoV-2_without_background.png-665da9f6f14afc88c7454cb8c6314d20.ctex"
+path="res://.godot/imported/SARS-CoV-2_without_background.png-3e5deda94c00b4e98e82d526ac2b4442.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/SARS-CoV-2_without_background.png"
-dest_files=["res://.godot/imported/SARS-CoV-2_without_background.png-665da9f6f14afc88c7454cb8c6314d20.ctex"]
+source_file="res://cool cat corona/art/SARS-CoV-2_without_background.png"
+dest_files=["res://.godot/imported/SARS-CoV-2_without_background.png-3e5deda94c00b4e98e82d526ac2b4442.ctex"]
 
 [params]
 

@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1251lmgjpc1p"]
+[gd_scene load_steps=6 format=3 uid="uid://c1251lmgjpc1p"]
 
-[ext_resource type="Script" path="res://Characters/cool_cat_main.gd" id="1_8360i"]
-[ext_resource type="Texture2D" uid="uid://dngqcmd44ffgm" path="res://art/CoolcatMainSprite.png" id="1_neh47"]
-[ext_resource type="PackedScene" uid="uid://qm3y1xrmjmqd" path="res://Characters/dead.tscn" id="2_shfv3"]
+[ext_resource type="Script" path="res://cool cat corona/Characters/cool_cat_main.gd" id="1_lci6h"]
+[ext_resource type="Texture2D" uid="uid://dngqcmd44ffgm" path="res://cool cat corona/art/CoolcatMainSprite.png" id="1_neh47"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yw6fn"]
 size = Vector2(148, 145)
@@ -15,8 +14,7 @@ size = Vector2(65, 34)
 
 [node name="CoolCatMain" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 3
-script = ExtResource("1_8360i")
-Gameover = ExtResource("2_shfv3")
+script = ExtResource("1_lci6h")
 
 [node name="CoolcatMainSprite" type="Sprite2D" parent="."]
 position = Vector2(-2, 1)

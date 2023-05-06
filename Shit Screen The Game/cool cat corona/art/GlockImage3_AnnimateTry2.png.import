@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bq5vq60wtykiq"
-path="res://.godot/imported/GlockImage3_AnnimateTry2.png-db6bc54b423b156337356ee15be129a6.ctex"
+path="res://.godot/imported/GlockImage3_AnnimateTry2.png-19b6a57aaae59db11178546e80133184.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/GlockImage3_AnnimateTry2.png"
-dest_files=["res://.godot/imported/GlockImage3_AnnimateTry2.png-db6bc54b423b156337356ee15be129a6.ctex"]
+source_file="res://cool cat corona/art/GlockImage3_AnnimateTry2.png"
+dest_files=["res://.godot/imported/GlockImage3_AnnimateTry2.png-19b6a57aaae59db11178546e80133184.ctex"]
 
 [params]
 
