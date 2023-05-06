@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs35tdus58bmj"]
+
+[ext_resource type="Texture2D" uid="uid://bf6xap63aj8pm" path="res://art/CoolcatMMaskedSprite.png" id="1_rgt1s"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CoolcatMMaskedSprite" type="Sprite2D" parent="."]
+position = Vector2(892, 435)
+scale = Vector2(1.03922, 0.985081)
+texture = ExtResource("1_rgt1s")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 762.0
+offset_top = 659.0
+offset_right = 1037.0
+offset_bottom = 764.0
+bbcode_enabled = true
+text = "[b]Cool Cat is now 100% immune to Covid!!![/b]"
+scroll_active = false
+tab_size = 24

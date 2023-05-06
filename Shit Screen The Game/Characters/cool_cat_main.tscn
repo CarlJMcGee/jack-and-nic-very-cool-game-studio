@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1251lmgjpc1p"]
+
+[ext_resource type="Script" path="res://Characters/cool_cat_main.gd" id="1_8360i"]
+[ext_resource type="Texture2D" uid="uid://dngqcmd44ffgm" path="res://art/CoolcatMainSprite.png" id="1_neh47"]
+[ext_resource type="PackedScene" uid="uid://qm3y1xrmjmqd" path="res://Characters/dead.tscn" id="2_shfv3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yw6fn"]
+size = Vector2(148, 145)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8omfx"]
+size = Vector2(99, 104)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0yav"]
+size = Vector2(65, 34)
+
+[node name="CoolCatMain" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 3
+script = ExtResource("1_8360i")
+Gameover = ExtResource("2_shfv3")
+
+[node name="CoolcatMainSprite" type="Sprite2D" parent="."]
+position = Vector2(-2, 1)
+scale = Vector2(0.170343, 0.176709)
+texture = ExtResource("1_neh47")
+
+[node name="Dead" type="Timer" parent="."]
+
+[node name="Player" type="Area2D" parent="." groups=["Player"]]
+collision_mask = 6
+
+[node name="Hitbox" type="CollisionShape2D" parent="Player" groups=["Player"]]
+position = Vector2(-1, 2.5)
+shape = SubResource("RectangleShape2D_yw6fn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
+position = Vector2(-0.5, 8)
+shape = SubResource("RectangleShape2D_8omfx")
+
+[node name="Face" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="Facebox" type="CollisionShape2D" parent="Face"]
+position = Vector2(-2.5, -25)
+shape = SubResource("RectangleShape2D_g0yav")
+
+[connection signal="timeout" from="Dead" to="." method="_on_dead_timeout"]
+[connection signal="area_entered" from="Player" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Player" to="." method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="Face" to="." method="_on_face_area_entered"]

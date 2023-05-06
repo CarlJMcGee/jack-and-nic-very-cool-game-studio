@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://btbv7k3c3owi7"]
+
+[ext_resource type="Texture2D" uid="uid://cnnw1n5uf2mne" path="res://art/messyfense.png" id="1_yrumu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4mlq"]
+size = Vector2(262, 277)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+position = Vector2(0, -4)
+
+[node name="Messyfense" type="Sprite2D" parent="."]
+position = Vector2(-8.99997, 70.375)
+scale = Vector2(0.35122, 0.669463)
+texture = ExtResource("1_yrumu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 77.5)
+shape = SubResource("RectangleShape2D_w4mlq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+offset_left = -132.0
+offset_top = 48.0
+offset_right = 129.0
+offset_bottom = 175.0
+color = Color(0.52549, 0.443137, 0, 1)

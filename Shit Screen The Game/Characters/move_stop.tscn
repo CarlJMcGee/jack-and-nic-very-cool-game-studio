@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cphfskp31w7nf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0b8u"]
+size = Vector2(71, 199)
+
+[node name="MoveStop" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["GunStop"]]
+position = Vector2(25.5, 89.5)
+shape = SubResource("RectangleShape2D_u0b8u")

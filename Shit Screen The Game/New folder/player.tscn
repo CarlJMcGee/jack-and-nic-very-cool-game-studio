@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckuja8ss81t7q"]
+
+[ext_resource type="Script" path="res://cool cat crossing/player.gd" id="1_bnu07"]
+[ext_resource type="AudioStream" uid="uid://cfa7sqfrxpt36" path="res://cool cat crossing/audio/Car Crash Sound Effect.wav" id="2_5ko1u"]
+[ext_resource type="Texture2D" uid="uid://dyrl5tglt4pbc" path="res://cool cat crossing/sprites/cool cat/cool cat run 4.png" id="3_lg72i"]
+[ext_resource type="Texture2D" uid="uid://dyassoc38qgjb" path="res://cool cat crossing/sprites/cool cat/cool cat run 3.png" id="4_ixb27"]
+[ext_resource type="Texture2D" uid="uid://pj5b6xyunxsc" path="res://cool cat crossing/sprites/cool cat/cool cat run 1.png" id="5_1amq8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2rkf5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lg72i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ixb27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1amq8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7ovo"]
+size = Vector2(80, 240)
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_bnu07")
+
+[node name="CrashFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_5ko1u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.999969, -2)
+scale = Vector2(0.334951, 0.334951)
+sprite_frames = SubResource("SpriteFrames_2rkf5")
+frame_progress = 0.477367
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s7ovo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
