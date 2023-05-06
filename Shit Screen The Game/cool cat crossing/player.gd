@@ -2,7 +2,7 @@ extends Area2D
 
 signal hit
 
-@export var speed = 400
+@export var speed: int =  400
 var screenSize
 
 # Called when the node enters the scene tree for the first time.
