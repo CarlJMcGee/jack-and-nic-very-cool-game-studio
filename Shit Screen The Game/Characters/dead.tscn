@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://qm3y1xrmjmqd"]
+
+[ext_resource type="Texture2D" uid="uid://b3nmx8o5bpmpt" path="res://art/Dead.png" id="1_cpxi1"]
+
+[node name="Dead" type="StaticBody2D"]
+top_level = true
+
+[node name="Dead" type="Sprite2D" parent="."]
+position = Vector2(705, 541)
+scale = Vector2(1.81425, 1.6958)
+texture = ExtResource("1_cpxi1")

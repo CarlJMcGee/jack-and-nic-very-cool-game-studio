@@ -1,0 +1,64 @@
+[gd_scene load_steps=11 format=3 uid="uid://dsyfusaf5eaf"]
+
+[ext_resource type="PackedScene" uid="uid://c1251lmgjpc1p" path="res://Characters/cool_cat_main.tscn" id="1_5qc2e"]
+[ext_resource type="Script" path="res://Levels/coolcat_level.gd" id="1_gyoqi"]
+[ext_resource type="PackedScene" uid="uid://btbv7k3c3owi7" path="res://Characters/Fence.tscn" id="4_ydhqh"]
+[ext_resource type="PackedScene" uid="uid://dv4a0abpd66jf" path="res://Characters/covid.tscn" id="5_53moi"]
+[ext_resource type="AudioStream" uid="uid://byx08arog2iyl" path="res://music/CoolCatTheme.mp3" id="6_btt47"]
+[ext_resource type="Script" path="res://Characters/moving_glock.gd" id="7_jtqyx"]
+[ext_resource type="PackedScene" uid="uid://rroby2shy2on" path="res://Characters/moving_glock.tscn" id="7_qvyaw"]
+[ext_resource type="PackedScene" uid="uid://cxgjl7ia4bxlu" path="res://Characters/mask.tscn" id="8_4m1lx"]
+[ext_resource type="PackedScene" uid="uid://cphfskp31w7nf" path="res://Characters/move_stop.tscn" id="8_ic1fa"]
+[ext_resource type="PackedScene" uid="uid://dmf5v1i85v36y" path="res://Characters/grassbackground.tscn" id="10_nxtf2"]
+
+[node name="CoolcatLevel" type="Node2D"]
+script = ExtResource("1_gyoqi")
+
+[node name="CoolCatMain" parent="." instance=ExtResource("1_5qc2e")]
+position = Vector2(152, 401)
+move_speed = 500.0
+
+[node name="StaticBody2D" parent="." instance=ExtResource("4_ydhqh")]
+position = Vector2(410, 338)
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(697, 443)
+
+[node name="Covid" parent="." instance=ExtResource("5_53moi")]
+position = Vector2(-989, -404)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_btt47")
+autoplay = true
+
+[node name="MovingGlock" parent="." instance=ExtResource("7_qvyaw")]
+position = Vector2(1031, 5)
+script = ExtResource("7_jtqyx")
+
+[node name="MoveStop" parent="." instance=ExtResource("8_ic1fa")]
+position = Vector2(1037, 109)
+
+[node name="MoveStop2" parent="." instance=ExtResource("8_ic1fa")]
+position = Vector2(1042, 664)
+
+[node name="MoveStop3" parent="." instance=ExtResource("8_ic1fa")]
+position = Vector2(1042, 417)
+
+[node name="Mask" parent="." instance=ExtResource("8_4m1lx")]
+position = Vector2(819, 442)
+
+[node name="TextureRect" parent="." instance=ExtResource("10_nxtf2")]
+show_behind_parent = true
+offset_left = 1.0
+offset_top = -20.0
+offset_right = 1469.0
+offset_bottom = 901.0
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Covid" to="CoolCatMain" method="_on_covid_body_entered"]
+[connection signal="Music_stop" from="Mask" to="." method="_on_mask_music_stop"]
+[connection signal="Music_stop" from="Mask" to="MovingGlock" method="_on_mask_music_stop"]
