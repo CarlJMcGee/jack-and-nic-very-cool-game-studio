@@ -19,6 +19,7 @@ var sprite_y
 # Export var : PackedScene makes an empty box in editor you can drag a scene to.
 #This lets you store a scene you want to make later.
 @export var Gameover : PackedScene
+var gameover := preload("res://cool cat corona/Characters/dead.tscn")
 
 # When running kill(), start a delay timer, stop Cool Cat's Movement, create
 # the stored "Gameover" scene (I think it creates it centered at (0,0) by default
@@ -30,7 +31,7 @@ var sprite_y
 func kill():
 	$Dead.start()
 	can_move = false
-	var fail = Gameover.instantiate()
+	var fail = gameover.instantiate()
 	get_parent().add_child(fail)
 
 # Find the size of the screen and of the cool cat sprite.
