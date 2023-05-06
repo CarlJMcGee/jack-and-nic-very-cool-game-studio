@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://de10cffdqxukf"]
+[gd_scene load_steps=14 format=3 uid="uid://de10cffdqxukf"]
 
 [ext_resource type="Texture2D" uid="uid://bpgbv8l25ej0q" path="res://Art/Breen_Back.png" id="1_sodew"]
 [ext_resource type="Script" path="res://MainScene/MainScene.gd" id="1_viohv"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://MainScene/Terror1.gd" id="7_f38m3"]
 [ext_resource type="Texture2D" uid="uid://10tykbjitlax" path="res://Art/TerroristBL.png" id="8_68iaa"]
 [ext_resource type="Texture2D" uid="uid://cglpfwgxjx7pr" path="res://Art/Terrorist_BR.png" id="9_lq35u"]
+[ext_resource type="Script" path="res://MainScene/Terror2.gd" id="9_r0qd0"]
 [ext_resource type="Texture2D" uid="uid://gx78k40r52x1" path="res://Art/terrorist_UM.png" id="10_4hbm4"]
 [ext_resource type="Texture2D" uid="uid://l1uabw3a7f60" path="res://Art/terror_UR.png" id="11_3vbkm"]
 
@@ -48,7 +49,7 @@ script = ExtResource("7_f38m3")
 position = Vector2(-79, -64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terror1/Area2D"]
-position = Vector2(111, 124.688)
+position = Vector2(102, 124)
 shape = SubResource("RectangleShape2D_a4cho")
 
 [node name="TerroristBl" type="Sprite2D" parent="Terror1"]
@@ -59,6 +60,7 @@ texture = ExtResource("8_68iaa")
 [node name="Terror2" type="RigidBody2D" parent="." groups=["Terrorist"]]
 position = Vector2(933, 452)
 gravity_scale = 0.0
+script = ExtResource("9_r0qd0")
 
 [node name="Area2D" type="Area2D" parent="Terror2"]
 
@@ -103,6 +105,9 @@ texture = ExtResource("11_3vbkm")
 
 [connection signal="youlose" from="RigidBody2D" to="." method="_on_rigid_body_2d_youlose"]
 [connection signal="input_event" from="RigidBody2D/Area2D" to="RigidBody2D" method="_on_area_2d_input_event"]
+[connection signal="winningBL" from="Terror1" to="." method="_on_terror_1_winning_bl"]
 [connection signal="input_event" from="Terror1/Area2D" to="Terror1" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Terror1/Area2D" to="Terror1" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Terror1/Area2D" to="Terror1" method="_on_area_2d_mouse_exited"]
+[connection signal="winningBR" from="Terror2" to="." method="_on_terror_2_winning_br"]
+[connection signal="input_event" from="Terror2/Area2D" to="Terror2" method="_on_area_2d_input_event"]
