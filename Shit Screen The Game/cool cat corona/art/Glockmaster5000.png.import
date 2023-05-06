@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://s6in0djbj1qt"
-path="res://.godot/imported/Glockmaster5000.png-35203ffec1340d4c23409db0783e087a.ctex"
+path="res://.godot/imported/Glockmaster5000.png-47140580349ee602abbe0e77c282db82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Glockmaster5000.png"
-dest_files=["res://.godot/imported/Glockmaster5000.png-35203ffec1340d4c23409db0783e087a.ctex"]
+source_file="res://cool cat corona/art/Glockmaster5000.png"
+dest_files=["res://.godot/imported/Glockmaster5000.png-47140580349ee602abbe0e77c282db82.ctex"]
 
 [params]
 

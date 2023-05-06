@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dv4a0abpd66jf"]
 
-[ext_resource type="Script" path="res://Characters/covid.gd" id="1_1j74e"]
-[ext_resource type="Texture2D" uid="uid://b8lmrqi8a62iu" path="res://art/SARS-CoV-2_without_background.png" id="1_jc3ni"]
+[ext_resource type="Texture2D" uid="uid://b8lmrqi8a62iu" path="res://cool cat corona/art/SARS-CoV-2_without_background.png" id="1_jc3ni"]
+[ext_resource type="Script" path="res://cool cat corona/Characters/covid.gd" id="1_sft2f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_occse"]
 radius = 40.0
@@ -15,7 +15,7 @@ collision_mask = 2
 gravity_scale = 0.0
 max_contacts_reported = 2
 contact_monitor = true
-script = ExtResource("1_1j74e")
+script = ExtResource("1_sft2f")
 speed = 300.0
 
 [node name="Sars-coV-2WithoutBackground" type="Sprite2D" parent="."]

@@ -1,18 +1,18 @@
 [gd_scene load_steps=11 format=3 uid="uid://dsyfusaf5eaf"]
 
-[ext_resource type="PackedScene" uid="uid://c1251lmgjpc1p" path="res://Characters/cool_cat_main.tscn" id="1_5qc2e"]
-[ext_resource type="Script" path="res://Levels/coolcat_level.gd" id="1_gyoqi"]
-[ext_resource type="PackedScene" uid="uid://btbv7k3c3owi7" path="res://Characters/Fence.tscn" id="4_ydhqh"]
-[ext_resource type="PackedScene" uid="uid://dv4a0abpd66jf" path="res://Characters/covid.tscn" id="5_53moi"]
-[ext_resource type="AudioStream" uid="uid://byx08arog2iyl" path="res://music/CoolCatTheme.mp3" id="6_btt47"]
+[ext_resource type="PackedScene" uid="uid://c1251lmgjpc1p" path="res://cool cat corona/Characters/cool_cat_main.tscn" id="1_5qc2e"]
+[ext_resource type="Script" path="res://cool cat corona/Levels/coolcat_level.gd" id="1_agvea"]
+[ext_resource type="PackedScene" uid="uid://btbv7k3c3owi7" path="res://cool cat corona/Characters/Fence.tscn" id="4_ydhqh"]
+[ext_resource type="PackedScene" uid="uid://dv4a0abpd66jf" path="res://cool cat corona/Characters/covid.tscn" id="5_53moi"]
+[ext_resource type="AudioStream" uid="uid://byx08arog2iyl" path="res://cool cat corona/music/CoolCatTheme.mp3" id="6_btt47"]
 [ext_resource type="Script" path="res://Characters/moving_glock.gd" id="7_jtqyx"]
-[ext_resource type="PackedScene" uid="uid://rroby2shy2on" path="res://Characters/moving_glock.tscn" id="7_qvyaw"]
-[ext_resource type="PackedScene" uid="uid://cxgjl7ia4bxlu" path="res://Characters/mask.tscn" id="8_4m1lx"]
-[ext_resource type="PackedScene" uid="uid://cphfskp31w7nf" path="res://Characters/move_stop.tscn" id="8_ic1fa"]
-[ext_resource type="PackedScene" uid="uid://dmf5v1i85v36y" path="res://Characters/grassbackground.tscn" id="10_nxtf2"]
+[ext_resource type="PackedScene" uid="uid://rroby2shy2on" path="res://cool cat corona/Characters/moving_glock.tscn" id="7_qvyaw"]
+[ext_resource type="PackedScene" uid="uid://cxgjl7ia4bxlu" path="res://cool cat corona/Characters/mask.tscn" id="8_4m1lx"]
+[ext_resource type="PackedScene" uid="uid://cphfskp31w7nf" path="res://cool cat corona/Characters/move_stop.tscn" id="8_ic1fa"]
+[ext_resource type="PackedScene" uid="uid://dmf5v1i85v36y" path="res://cool cat corona/Characters/grassbackground.tscn" id="10_nxtf2"]
 
 [node name="CoolcatLevel" type="Node2D"]
-script = ExtResource("1_gyoqi")
+script = ExtResource("1_agvea")
 
 [node name="CoolCatMain" parent="." instance=ExtResource("1_5qc2e")]
 position = Vector2(152, 401)
