@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmd3w5e6g86y"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_db5bp"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_db5bp")
+
+[node name="CoronaBtn" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 128.0
+offset_right = 704.0
+offset_bottom = 256.0
+text = "Cool Cat Fights Corona Virus"
+
+[node name="CoolCatBtn" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 328.0
+offset_right = 704.0
+offset_bottom = 456.0
+text = "Cool Cat Saves the Kids"
+
+[connection signal="pressed" from="CoronaBtn" to="." method="_on_corona_btn_pressed"]
+[connection signal="pressed" from="CoolCatBtn" to="." method="_on_cool_cat_btn_pressed"]
