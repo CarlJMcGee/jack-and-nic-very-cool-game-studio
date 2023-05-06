@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmf5v1i85v36y"]
+
+[ext_resource type="Texture2D" uid="uid://g2s1cy1rwpq5" path="res://art/Grass.jpg" id="1_f261r"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 1474.0
+offset_bottom = 923.0
+
+[node name="Grass" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(754.25, 483.75)
+scale = Vector2(5.01833, 5.66964)
+texture = ExtResource("1_f261r")
