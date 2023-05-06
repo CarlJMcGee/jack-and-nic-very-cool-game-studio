@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://de10cffdqxukf"]
+[gd_scene load_steps=13 format=3 uid="uid://de10cffdqxukf"]
 
 [ext_resource type="Texture2D" uid="uid://bpgbv8l25ej0q" path="res://Art/Breen_Back.png" id="1_sodew"]
 [ext_resource type="Script" path="res://MainScene/MainScene.gd" id="1_viohv"]
@@ -8,9 +8,12 @@
 [ext_resource type="Script" path="res://MainScene/CoolcatMainSprite.gd" id="6_mgdg4"]
 [ext_resource type="Script" path="res://MainScene/Terror1.gd" id="7_f38m3"]
 [ext_resource type="Texture2D" uid="uid://10tykbjitlax" path="res://Art/TerroristBL.png" id="8_68iaa"]
+[ext_resource type="Texture2D" uid="uid://cglpfwgxjx7pr" path="res://Art/Terrorist_BR.png" id="9_lq35u"]
+[ext_resource type="Texture2D" uid="uid://gx78k40r52x1" path="res://Art/terrorist_UM.png" id="10_4hbm4"]
+[ext_resource type="Texture2D" uid="uid://l1uabw3a7f60" path="res://Art/terror_UR.png" id="11_3vbkm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4cho"]
-size = Vector2(97, 179)
+size = Vector2(107, 175.25)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_viohv")
@@ -45,22 +48,17 @@ script = ExtResource("7_f38m3")
 position = Vector2(-79, -64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terror1/Area2D"]
-position = Vector2(105, 136)
+position = Vector2(111, 142.75)
 shape = SubResource("RectangleShape2D_a4cho")
 
 [node name="TerroristBl" type="Sprite2D" parent="Terror1"]
-position = Vector2(36, 79)
+position = Vector2(38, 74.75)
+scale = Vector2(1, 1.02096)
 texture = ExtResource("8_68iaa")
 
 [node name="Terror2" type="RigidBody2D" parent="." groups=["Terrorist"]]
 position = Vector2(933, 452)
 gravity_scale = 0.0
-
-[node name="ColorRect" type="ColorRect" parent="Terror2"]
-offset_left = 7.0
-offset_top = 6.0
-offset_right = 110.0
-offset_bottom = 177.0
 
 [node name="Area2D" type="Area2D" parent="Terror2"]
 
@@ -68,37 +66,40 @@ offset_bottom = 177.0
 position = Vector2(58, 92)
 shape = SubResource("RectangleShape2D_a4cho")
 
+[node name="TerroristBr" type="Sprite2D" parent="Terror2"]
+position = Vector2(69.0001, 84)
+scale = Vector2(1.1371, 1.24176)
+texture = ExtResource("9_lq35u")
+
 [node name="Terror3" type="RigidBody2D" parent="." groups=["Terrorist"]]
 position = Vector2(421, 38)
 gravity_scale = 0.0
 
-[node name="ColorRect" type="ColorRect" parent="Terror3"]
-offset_left = 7.0
-offset_top = 6.0
-offset_right = 110.0
-offset_bottom = 177.0
-
 [node name="Area2D" type="Area2D" parent="Terror3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terror3/Area2D"]
-position = Vector2(58, 92)
+position = Vector2(96, 94)
 shape = SubResource("RectangleShape2D_a4cho")
+
+[node name="TerroristUm" type="Sprite2D" parent="Terror3"]
+position = Vector2(102, 95)
+scale = Vector2(1.126, 1.242)
+texture = ExtResource("10_4hbm4")
 
 [node name="Terror4" type="RigidBody2D" parent="." groups=["Terrorist"]]
 position = Vector2(585, 31)
 gravity_scale = 0.0
 
-[node name="ColorRect" type="ColorRect" parent="Terror4"]
-offset_left = 7.0
-offset_top = 6.0
-offset_right = 110.0
-offset_bottom = 177.0
-
 [node name="Area2D" type="Area2D" parent="Terror4"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terror4/Area2D"]
-position = Vector2(58, 92)
+position = Vector2(64.5, 72.375)
 shape = SubResource("RectangleShape2D_a4cho")
+
+[node name="TerrorUr" type="Sprite2D" parent="Terror4"]
+position = Vector2(64.5, 88)
+scale = Vector2(1.11458, 1.21429)
+texture = ExtResource("11_3vbkm")
 
 [connection signal="youlose" from="RigidBody2D" to="." method="_on_rigid_body_2d_youlose"]
 [connection signal="input_event" from="RigidBody2D/Area2D" to="RigidBody2D" method="_on_area_2d_input_event"]
