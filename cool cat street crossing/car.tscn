@@ -1,0 +1,98 @@
+[gd_scene load_steps=11 format=3 uid="uid://jrc4u610hqo5"]
+
+[ext_resource type="Texture2D" uid="uid://c2a0bp70typrx" path="res://sprites/cars/car 1.png" id="1_aorbj"]
+[ext_resource type="Script" path="res://car.gd" id="1_xovvx"]
+[ext_resource type="Texture2D" uid="uid://dervpiyc6atks" path="res://sprites/cars/car 2.png" id="2_66osa"]
+[ext_resource type="Texture2D" uid="uid://bset1jnbm6gw4" path="res://sprites/cars/car 3.png" id="3_ihvee"]
+[ext_resource type="Texture2D" uid="uid://dbrk8fchyr0bv" path="res://sprites/cars/car 4.png" id="4_4oktp"]
+[ext_resource type="Texture2D" uid="uid://b8tbaagkunwla" path="res://sprites/cars/car 5.png" id="6_itkyd"]
+[ext_resource type="Texture2D" uid="uid://cpbfxybjlu7v6" path="res://sprites/cars/car 6.png" id="7_anm0i"]
+[ext_resource type="Texture2D" uid="uid://dyyg22cdr308u" path="res://sprites/cars/car 7.png" id="8_6ve5j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r5nbp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_aorbj")
+}],
+"loop": true,
+"name": &"car 1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_66osa")
+}],
+"loop": true,
+"name": &"car 2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ihvee")
+}],
+"loop": true,
+"name": &"car 3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4oktp")
+}],
+"loop": true,
+"name": &"car 4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_itkyd")
+}],
+"loop": true,
+"name": &"car 5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_anm0i")
+}],
+"loop": true,
+"name": &"car 6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_6ve5j")
+}],
+"loop": true,
+"name": &"car 7",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fi77g"]
+radius = 32.971
+height = 344.0
+
+[node name="Car" type="RigidBody2D"]
+z_index = 1
+scale = Vector2(0.727912, 0.727912)
+collision_mask = 0
+gravity_scale = 0.0
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_xovvx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(0.195515, 0.195515)
+sprite_frames = SubResource("SpriteFrames_r5nbp")
+animation = &"car 1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 21.9807)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_fi77g")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-164.855, 0)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
