@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxgjl7ia4bxlu"]
+[gd_scene load_steps=6 format=3 uid="uid://cxgjl7ia4bxlu"]
 
 [ext_resource type="Texture2D" uid="uid://d3ngwxpj3nuwr" path="res://cool cat corona/art/MaskSprite.png" id="1_0m31p"]
 [ext_resource type="Script" path="res://cool cat corona/Characters/mask.gd" id="1_pna2u"]
+[ext_resource type="PackedScene" uid="uid://cs35tdus58bmj" path="res://cool cat corona/Characters/Victory.tscn" id="2_dlbwe"]
 [ext_resource type="AudioStream" uid="uid://b3ex6qgd6qumj" path="res://cool cat corona/music/Victory.ogg" id="4_2f13l"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ssnrx"]
@@ -12,6 +13,7 @@ height = 104.0
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_pna2u")
+Victory = ExtResource("2_dlbwe")
 
 [node name="MaskSprite" type="Sprite2D" parent="."]
 position = Vector2(0, 1)
