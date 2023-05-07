@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://de10cffdqxukf"]
+[gd_scene load_steps=16 format=3 uid="uid://de10cffdqxukf"]
 
 [ext_resource type="Texture2D" uid="uid://bpgbv8l25ej0q" path="res://Art/Breen_Back.png" id="1_sodew"]
 [ext_resource type="Script" path="res://MainScene/MainScene.gd" id="1_viohv"]
@@ -11,7 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://cglpfwgxjx7pr" path="res://Art/Terrorist_BR.png" id="9_lq35u"]
 [ext_resource type="Script" path="res://MainScene/Terror2.gd" id="9_r0qd0"]
 [ext_resource type="Texture2D" uid="uid://gx78k40r52x1" path="res://Art/terrorist_UM.png" id="10_4hbm4"]
+[ext_resource type="Script" path="res://MainScene/Terror3.gd" id="11_2lgh7"]
 [ext_resource type="Texture2D" uid="uid://l1uabw3a7f60" path="res://Art/terror_UR.png" id="11_3vbkm"]
+[ext_resource type="Script" path="res://MainScene/Terror4.gd" id="13_5uef6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4cho"]
 size = Vector2(107, 212.625)
@@ -76,8 +78,10 @@ texture = ExtResource("9_lq35u")
 [node name="Terror3" type="RigidBody2D" parent="." groups=["Terrorist"]]
 position = Vector2(421, 38)
 gravity_scale = 0.0
+script = ExtResource("11_2lgh7")
 
 [node name="Area2D" type="Area2D" parent="Terror3"]
+position = Vector2(1, -15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terror3/Area2D"]
 position = Vector2(104, 92)
@@ -91,6 +95,7 @@ texture = ExtResource("10_4hbm4")
 [node name="Terror4" type="RigidBody2D" parent="." groups=["Terrorist"]]
 position = Vector2(585, 31)
 gravity_scale = 0.0
+script = ExtResource("13_5uef6")
 
 [node name="Area2D" type="Area2D" parent="Terror4"]
 
@@ -111,3 +116,7 @@ texture = ExtResource("11_3vbkm")
 [connection signal="mouse_exited" from="Terror1/Area2D" to="Terror1" method="_on_area_2d_mouse_exited"]
 [connection signal="winningBR" from="Terror2" to="." method="_on_terror_2_winning_br"]
 [connection signal="input_event" from="Terror2/Area2D" to="Terror2" method="_on_area_2d_input_event"]
+[connection signal="winningUM" from="Terror3" to="." method="_on_terror_3_winning_um"]
+[connection signal="input_event" from="Terror3/Area2D" to="Terror3" method="_on_area_2d_input_event"]
+[connection signal="winningUR" from="Terror4" to="." method="_on_terror_4_winning_ur"]
+[connection signal="input_event" from="Terror4/Area2D" to="Terror4" method="_on_area_2d_input_event"]

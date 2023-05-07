@@ -26,3 +26,15 @@ func _on_terror_2_winning_br():
 	Tcounter -= 1
 	var test : String = str(Tcounter)
 	print(test)
+
+
+func _on_terror_3_winning_um():
+	Tcounter -= 1
+	var test : String = str(Tcounter)
+	print(test)
+
+
+func _on_terror_4_winning_ur():
+	Tcounter -= 1
+	var test : String = str(Tcounter)
+	print(test)
