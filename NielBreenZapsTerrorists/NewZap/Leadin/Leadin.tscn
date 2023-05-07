@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://fj727qn1nwg0"]
+[gd_scene load_steps=5 format=3 uid="uid://fj727qn1nwg0"]
 
+[ext_resource type="Script" path="res://Leadin/Leadin.gd" id="1_b16dw"]
 [ext_resource type="FontFile" uid="uid://dhgwl83pio1in" path="res://Art/comic-sans-ms/COMIC.TTF" id="1_d14fj"]
 [ext_resource type="FontFile" uid="uid://bwipydhm1kdhh" path="res://Art/8-BIT WONDER.TTF" id="2_2js4d"]
 [ext_resource type="Texture2D" uid="uid://c8xmcpxpv7cby" path="res://Art/mouse.svg" id="3_qpf5h"]
@@ -15,6 +16,8 @@ offset_right = -5.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_b16dw")
+fullcount = null
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -79,3 +82,5 @@ texture = ExtResource("3_qpf5h")
 autostart = true
 
 [node name="countdown" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
