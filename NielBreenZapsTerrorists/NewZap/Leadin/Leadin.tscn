@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=3 uid="uid://fj727qn1nwg0"]
+
+[ext_resource type="Script" path="res://Leadin/Leadin.gd" id="1_b16dw"]
+[ext_resource type="FontFile" uid="uid://dhgwl83pio1in" path="res://Art/comic-sans-ms/COMIC.TTF" id="1_d14fj"]
+[ext_resource type="FontFile" uid="uid://bwipydhm1kdhh" path="res://Art/8-BIT WONDER.TTF" id="2_2js4d"]
+[ext_resource type="Texture2D" uid="uid://c8xmcpxpv7cby" path="res://Art/mouse.svg" id="3_qpf5h"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 9.0
+offset_right = -5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b16dw")
+
+[node name="Text1" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 232.0
+offset_top = 114.0
+offset_right = 664.0
+offset_bottom = 274.0
+theme_override_fonts/normal_font = ExtResource("1_d14fj")
+theme_override_font_sizes/normal_font_size = 71
+text = "Controls: "
+
+[node name="Text2" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 225.0
+offset_top = 262.0
+offset_right = 452.0
+offset_bottom = 422.0
+theme_override_fonts/normal_font = ExtResource("1_d14fj")
+theme_override_font_sizes/normal_font_size = 71
+text = "Goal:"
+
+[node name="Text22" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 430.0
+offset_top = 265.0
+offset_right = 1131.0
+offset_bottom = 425.0
+theme_override_fonts/normal_font = ExtResource("1_d14fj")
+theme_override_font_sizes/normal_font_size = 71
+text = "Zap the terrorists!"
+
+[node name="Text3" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 232.0
+offset_top = 409.0
+offset_right = 598.0
+offset_bottom = 569.0
+theme_override_fonts/normal_font = ExtResource("1_d14fj")
+theme_override_font_sizes/normal_font_size = 71
+text = "Get ready:"
+
+[node name="countdowntext" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 629.0
+offset_top = 408.0
+offset_right = 763.0
+offset_bottom = 526.0
+theme_override_fonts/normal_font = ExtResource("2_2js4d")
+theme_override_font_sizes/normal_font_size = 80
+text = "3"
+
+[node name="Line2D" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array(605, 523, 778.546, 523, 813, 523)
+width = 30.0
+
+[node name="Mouse" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(718, 116.5)
+scale = Vector2(0.612613, 0.598194)
+texture = ExtResource("3_qpf5h")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="countdown" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
