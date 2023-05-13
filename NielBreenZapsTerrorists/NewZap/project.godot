@@ -15,6 +15,10 @@ run/main_scene="res://Leadin/Leadin.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[dotnet]
+
+project/assembly_name="Jack-and-nic-very-cool-game-studio"
+
 [input]
 
 Click={
