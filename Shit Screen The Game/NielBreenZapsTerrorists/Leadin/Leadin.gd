@@ -9,6 +9,7 @@ extends Control
 @onready var countdowntext = $countdowntext
 @onready var pic = $Mouse
 
+signal now
 
 func _physics_process(_delta):
 	if fullcount == (fullcountfull - 1):
@@ -21,6 +22,11 @@ func _physics_process(_delta):
 		Text22.visible = true
 	elif fullcount == (fullcountfull - 7):
 		Text3.visible = true
-
+		now.emit()
+		print("signaled")
+		
 func _on_timer_timeout():
 	fullcount -= 1
+
+
+
