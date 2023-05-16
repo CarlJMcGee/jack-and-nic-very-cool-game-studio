@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://fj727qn1nwg0"]
+[gd_scene load_steps=8 format=3 uid="uid://fj727qn1nwg0"]
 
 [ext_resource type="FontFile" uid="uid://dhgwl83pio1in" path="res://NielBreenZapsTerrorists/Art/comic-sans-ms/COMIC.TTF" id="1_d14fj"]
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/Leadin.gd" id="1_dxb6i"]
 [ext_resource type="FontFile" uid="uid://bwipydhm1kdhh" path="res://NielBreenZapsTerrorists/Art/8-BIT WONDER.TTF" id="2_2js4d"]
 [ext_resource type="Texture2D" uid="uid://c8xmcpxpv7cby" path="res://NielBreenZapsTerrorists/Art/mouse.svg" id="3_qpf5h"]
+[ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/countdowntext.gd" id="4_3dpdx"]
 [ext_resource type="Texture2D" uid="uid://djsjdcb0p881o" path="res://NielBreenZapsTerrorists/Art/PureWhiteTexture.png" id="5_vgyop"]
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/Countbar.gd" id="6_kdasu"]
 
@@ -65,6 +66,7 @@ theme_override_font_sizes/normal_font_size = 71
 text = "Get ready:"
 
 [node name="countdowntext" type="RichTextLabel" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 733.0
 offset_top = 406.0
@@ -73,6 +75,7 @@ offset_bottom = 524.0
 theme_override_fonts/normal_font = ExtResource("2_2js4d")
 theme_override_font_sizes/normal_font_size = 80
 text = "3"
+script = ExtResource("4_3dpdx")
 
 [node name="Mouse" type="Sprite2D" parent="."]
 visible = false
@@ -84,6 +87,7 @@ texture = ExtResource("3_qpf5h")
 autostart = true
 
 [node name="Countbar" type="TextureProgressBar" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 601.0
 offset_top = 511.0
@@ -96,6 +100,8 @@ nine_patch_stretch = true
 texture_progress = ExtResource("5_vgyop")
 script = ExtResource("6_kdasu")
 
+[connection signal="now" from="." to="countdowntext" method="_on_control_now"]
 [connection signal="now" from="." to="Countbar" method="_on_control_now"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="countdowntext" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Countbar" method="_on_timer_timeout"]

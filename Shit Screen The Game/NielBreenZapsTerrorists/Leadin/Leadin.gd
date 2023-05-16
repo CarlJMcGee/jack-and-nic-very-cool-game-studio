@@ -23,7 +23,7 @@ func _physics_process(_delta):
 	elif fullcount == (fullcountfull - 7):
 		Text3.visible = true
 		now.emit()
-		print("signaled")
+		
 		
 func _on_timer_timeout():
 	fullcount -= 1

@@ -17,3 +17,4 @@ func _on_timer_timeout():
 
 func _on_control_now():
 	starttime = true
+	visible = true
