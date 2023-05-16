@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://fj727qn1nwg0"]
+[gd_scene load_steps=9 format=3 uid="uid://fj727qn1nwg0"]
 
 [ext_resource type="FontFile" uid="uid://dhgwl83pio1in" path="res://NielBreenZapsTerrorists/Art/comic-sans-ms/COMIC.TTF" id="1_d14fj"]
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/Leadin.gd" id="1_dxb6i"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/countdowntext.gd" id="4_3dpdx"]
 [ext_resource type="Texture2D" uid="uid://djsjdcb0p881o" path="res://NielBreenZapsTerrorists/Art/PureWhiteTexture.png" id="5_vgyop"]
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/Countbar.gd" id="6_kdasu"]
+[ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/Delay.gd" id="8_0iiyc"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -100,8 +101,13 @@ nine_patch_stretch = true
 texture_progress = ExtResource("5_vgyop")
 script = ExtResource("6_kdasu")
 
+[node name="Delay" type="Timer" parent="."]
+script = ExtResource("8_0iiyc")
+
 [connection signal="now" from="." to="countdowntext" method="_on_control_now"]
 [connection signal="now" from="." to="Countbar" method="_on_control_now"]
+[connection signal="soon" from="countdowntext" to="Delay" method="_on_countdowntext_soon"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="countdowntext" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Countbar" method="_on_timer_timeout"]
+[connection signal="timeout" from="Delay" to="." method="_on_delay_timeout"]

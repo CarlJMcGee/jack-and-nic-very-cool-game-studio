@@ -1,5 +1,7 @@
 extends Control
-
+var next :={
+	"zap": preload("res://NielBreenZapsTerrorists/MainScene/MainScene.gd")
+	}
 @export var fullcountfull : float = 15
 @onready var fullcount = fullcountfull
 @onready var Text1 = $Text1
@@ -30,3 +32,7 @@ func _on_timer_timeout():
 
 
 
+
+
+func _on_delay_timeout():
+	get_tree().change_scene_to_packed(next["zap"])
