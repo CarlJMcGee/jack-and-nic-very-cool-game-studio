@@ -2,11 +2,12 @@ extends RichTextLabel
 
 var number : int = 3
 var shout := str("Go!")
-var final := true
+var final := false
 
 
 func _on_control_now():
 	visible = true
+	final = true
 
 func _physics_process(_delta):
 	if number == 2:
@@ -17,4 +18,5 @@ func _physics_process(_delta):
 		set_text(shout)
 
 func _on_timer_timeout():
-	number -= 1
+	if final == true:
+		number -= 1
