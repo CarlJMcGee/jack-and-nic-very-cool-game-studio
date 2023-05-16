@@ -14,9 +14,10 @@ func _physics_process(_delta):
 		set_text("2")
 	elif number == 1:
 		set_text("1")
-	elif number <= 0:
+	elif number == 0:
 		set_text(shout)
-	
+	elif number == -1:
+		soon.emit()
 func _on_timer_timeout():
 	if final == true:
 		number -= 1

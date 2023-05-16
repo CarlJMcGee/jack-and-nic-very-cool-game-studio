@@ -39,5 +39,5 @@ func _on_timer_timeout():
 
 
 
-func _on_delay_timeout():
-		nextlevel()
+func _on_countdowntext_soon():
+	nextlevel()
