@@ -1,7 +1,8 @@
 extends Control
-var next :={
-	"zap": preload("res://NielBreenZapsTerrorists/MainScene/MainScene.gd")
-	}
+
+
+var next := preload("res://NielBreenZapsTerrorists/MainScene/MainScene.tscn")
+
 @export var fullcountfull : float = 15
 @onready var fullcount = fullcountfull
 @onready var Text1 = $Text1
@@ -12,6 +13,10 @@ var next :={
 @onready var pic = $Mouse
 
 signal now
+
+func nextlevel():
+	get_tree().change_scene_to_packed(next)
+
 
 func _physics_process(_delta):
 	if fullcount == (fullcountfull - 1):
@@ -35,4 +40,4 @@ func _on_timer_timeout():
 
 
 func _on_delay_timeout():
-	get_tree().change_scene_to_packed(next["zap"])
+		nextlevel()
