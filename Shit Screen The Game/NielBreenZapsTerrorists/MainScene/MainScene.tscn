@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://de10cffdqxukf"]
+[gd_scene load_steps=18 format=3 uid="uid://de10cffdqxukf"]
 
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/MainScene/MainScene.gd" id="1_bx67t"]
 [ext_resource type="Texture2D" uid="uid://bpgbv8l25ej0q" path="res://NielBreenZapsTerrorists/Art/Breen_Back.png" id="1_sodew"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/MainScene/Terror3.gd" id="11_fpo6h"]
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/MainScene/Terror4.gd" id="13_o2u3e"]
 [ext_resource type="PackedScene" uid="uid://b7l1wg12b1wbb" path="res://NielBreenZapsTerrorists/MainScene/individual_parts/Armcannon.tscn" id="15_c3bgt"]
+[ext_resource type="AudioStream" uid="uid://ciw0utik5o3ub" path="res://NielBreenZapsTerrorists/Sound/IconicSuperhero.ogg" id="16_w1u1v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4cho"]
 size = Vector2(107, 212.625)
@@ -111,6 +112,10 @@ texture = ExtResource("11_3vbkm")
 
 [node name="Armcannon" parent="." instance=ExtResource("15_c3bgt")]
 position = Vector2(286, 116)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_w1u1v")
+autoplay = true
 
 [connection signal="youlose" from="RigidBody2D" to="." method="_on_rigid_body_2d_youlose"]
 [connection signal="input_event" from="RigidBody2D/Area2D" to="RigidBody2D" method="_on_area_2d_input_event"]
