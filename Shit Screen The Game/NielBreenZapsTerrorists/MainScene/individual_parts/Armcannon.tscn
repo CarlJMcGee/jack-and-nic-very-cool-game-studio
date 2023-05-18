@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7l1wg12b1wbb"]
+
+[ext_resource type="Script" path="res://Armcannon.gd" id="1_fyjrd"]
+[ext_resource type="Texture2D" uid="uid://dsgkyo4qca5ak" path="res://NielBreenZapsTerrorists/Art/Zap.png" id="3_jg03g"]
+[ext_resource type="Texture2D" uid="uid://ciht6encexena" path="res://NielBreenZapsTerrorists/Art/Arm.png" id="3_y8sgy"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_fyjrd")
+
+[node name="Zap" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(281, -12)
+rotation = -1.57079
+texture = ExtResource("3_jg03g")
+
+[node name="Arm" type="Sprite2D" parent="."]
+position = Vector2(53, 0)
+rotation = -1.57079
+scale = Vector2(0.29012, 0.284849)
+texture = ExtResource("3_y8sgy")
