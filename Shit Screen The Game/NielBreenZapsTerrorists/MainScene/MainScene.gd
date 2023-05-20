@@ -19,6 +19,7 @@ func _physics_process(delta):
 
 
 func _on_rigid_body_2d_youlose():
+	$Armcannon.queue_free()
 	$Dead.visible = true
 	$AudioStreamPlayer.playing = false
 	$Catsong.play()
@@ -51,6 +52,7 @@ func _on_terror_4_winning_ur():
 
 
 func youwin():
+	$Armcannon.queue_free()
 	$Winpic.visible = true
 	$AudioStreamPlayer.stop()
 	$Winsound.play()
@@ -60,3 +62,14 @@ func youwin():
 
 func _on_winsound_finished():
 	get_tree().change_scene_to_packed(restart)
+
+
+func _on_bombtime_kaboom():
+	$Armcannon.queue_free()
+	$AudioStreamPlayer.stop()
+	$Bombsound.play()
+	$"Twisted-pair".visible = true
+
+
+func _on_bombsound_finished():
+	get_tree().change_scene_to_packed(fail)

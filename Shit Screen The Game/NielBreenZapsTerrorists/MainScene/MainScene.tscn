@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://de10cffdqxukf"]
+[gd_scene load_steps=27 format=3 uid="uid://de10cffdqxukf"]
 
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/MainScene/MainScene.gd" id="1_13trc"]
 [ext_resource type="Texture2D" uid="uid://bpgbv8l25ej0q" path="res://NielBreenZapsTerrorists/Art/Breen_Back.png" id="1_sodew"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://cjekcdn58ce5h" path="res://NielBreenZapsTerrorists/MainScene/bombtime.tscn" id="22_wviok"]
 [ext_resource type="AudioStream" uid="uid://dfoen2g1agq7w" path="res://NielBreenZapsTerrorists/Sound/NielFail_better.ogg" id="23_r4lb1"]
 [ext_resource type="AudioStream" uid="uid://b3i7mb82eu218" path="res://NielBreenZapsTerrorists/Sound/NielWin.ogg" id="24_yrttp"]
+[ext_resource type="Texture2D" uid="uid://dw7umhkun5wg8" path="res://NielBreenZapsTerrorists/Art/Twisted-Pair.jpg" id="25_p2r0u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4cho"]
 size = Vector2(107, 212.625)
@@ -178,6 +179,12 @@ stream = ExtResource("23_r4lb1")
 [node name="Winsound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("24_yrttp")
 
+[node name="Twisted-pair" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(579.5, 328.25)
+scale = Vector2(1.13379, 1.13951)
+texture = ExtResource("25_p2r0u")
+
 [connection signal="youlose" from="RigidBody2D" to="." method="_on_rigid_body_2d_youlose"]
 [connection signal="input_event" from="RigidBody2D/Area2D" to="RigidBody2D" method="_on_area_2d_input_event"]
 [connection signal="winningBL" from="Terror1" to="." method="_on_terror_1_winning_bl"]
@@ -190,4 +197,6 @@ stream = ExtResource("24_yrttp")
 [connection signal="input_event" from="Terror3/Area2D" to="Terror3" method="_on_area_2d_input_event"]
 [connection signal="winningUR" from="Terror4" to="." method="_on_terror_4_winning_ur"]
 [connection signal="input_event" from="Terror4/Area2D" to="Terror4" method="_on_area_2d_input_event"]
+[connection signal="kaboom" from="Bombtime" to="." method="_on_bombtime_kaboom"]
+[connection signal="finished" from="Bombsound" to="." method="_on_bombsound_finished"]
 [connection signal="finished" from="Winsound" to="." method="_on_winsound_finished"]
