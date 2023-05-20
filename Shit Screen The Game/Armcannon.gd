@@ -12,10 +12,10 @@ func _physics_process(delta: float):
 	
 func zapnow():
 	$Zap.visible = true
+	$Sound.play()
 	await get_tree().create_timer(0.1).timeout
 	$Zap.visible = false
 		
 func _input(event):
 	if event.is_action_pressed("click(all mouse buttons)"):
-		print("working")
 		zapnow()

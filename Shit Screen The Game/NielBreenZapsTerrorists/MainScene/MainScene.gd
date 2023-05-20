@@ -3,6 +3,8 @@ extends Node2D
 @onready var Tcounter := 4
 var restart := preload("res://main_menu.tscn")
 var fail := preload("res://NielBreenZapsTerrorists/Leadin/Leadin.tscn")
+
+var test := 4
 """
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
@@ -13,6 +15,7 @@ func _input(event):
 func _physics_process(delta):
 	if Tcounter == 0:
 		youwin()
+	print(test)
 
 
 func _on_rigid_body_2d_youlose():

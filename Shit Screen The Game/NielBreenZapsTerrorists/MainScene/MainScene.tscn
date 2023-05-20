@@ -1,6 +1,5 @@
-[gd_scene load_steps=24 format=3 uid="uid://de10cffdqxukf"]
+[gd_scene load_steps=23 format=3 uid="uid://de10cffdqxukf"]
 
-[ext_resource type="Script" path="res://NielBreenZapsTerrorists/MainScene/MainScene.gd" id="1_bx67t"]
 [ext_resource type="Texture2D" uid="uid://bpgbv8l25ej0q" path="res://NielBreenZapsTerrorists/Art/Breen_Back.png" id="1_sodew"]
 [ext_resource type="Texture2D" uid="uid://d16qa2vo6565j" path="res://NielBreenZapsTerrorists/Art/CoolcatMainSprite.png" id="2_1oumf"]
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/MainScene/RigidBody2D.gd" id="3_5cu18"]
@@ -27,7 +26,6 @@
 size = Vector2(107, 212.625)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_bx67t")
 
 [node name="BreenBack" type="Sprite2D" parent="."]
 position = Vector2(579, 329)
