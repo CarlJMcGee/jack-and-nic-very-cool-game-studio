@@ -15,7 +15,6 @@ func _input(event):
 func _physics_process(delta):
 	if Tcounter == 0:
 		youwin()
-	print(test)
 
 
 func _on_rigid_body_2d_youlose():
