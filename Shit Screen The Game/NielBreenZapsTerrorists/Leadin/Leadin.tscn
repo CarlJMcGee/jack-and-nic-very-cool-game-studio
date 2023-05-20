@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://fj727qn1nwg0"]
+[gd_scene load_steps=10 format=3 uid="uid://fj727qn1nwg0"]
 
 [ext_resource type="FontFile" uid="uid://dhgwl83pio1in" path="res://NielBreenZapsTerrorists/Art/comic-sans-ms/COMIC.TTF" id="1_d14fj"]
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/Leadin.gd" id="1_dxb6i"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/countdowntext.gd" id="4_3dpdx"]
 [ext_resource type="Texture2D" uid="uid://djsjdcb0p881o" path="res://NielBreenZapsTerrorists/Art/PureWhiteTexture.png" id="5_vgyop"]
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/Countbar.gd" id="6_kdasu"]
+[ext_resource type="AudioStream" uid="uid://s2xa6rfp3r67" path="res://NielBreenZapsTerrorists/Sound/VERYTEMPaudio.ogg" id="8_6kbwc"]
+[ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/ReplaceMeWithSomethingBetter.gd" id="9_mhq7j"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -100,9 +102,19 @@ nine_patch_stretch = true
 texture_progress = ExtResource("5_vgyop")
 script = ExtResource("6_kdasu")
 
+[node name="ReplaceMeWithSomethingBetter" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_6kbwc")
+script = ExtResource("9_mhq7j")
+
+[node name="Sounddelay" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+autostart = true
+
 [connection signal="now" from="." to="countdowntext" method="_on_control_now"]
 [connection signal="now" from="." to="Countbar" method="_on_control_now"]
 [connection signal="soon" from="countdowntext" to="." method="_on_countdowntext_soon"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="countdowntext" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Countbar" method="_on_timer_timeout"]
+[connection signal="timeout" from="Sounddelay" to="ReplaceMeWithSomethingBetter" method="_on_sounddelay_timeout"]

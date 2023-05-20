@@ -185,6 +185,7 @@ position = Vector2(579.5, 328.25)
 scale = Vector2(1.13379, 1.13951)
 texture = ExtResource("25_p2r0u")
 
+[connection signal="stopzapping" from="." to="Armcannon" method="_on_node_2d_stopzapping"]
 [connection signal="youlose" from="RigidBody2D" to="." method="_on_rigid_body_2d_youlose"]
 [connection signal="input_event" from="RigidBody2D/Area2D" to="RigidBody2D" method="_on_area_2d_input_event"]
 [connection signal="winningBL" from="Terror1" to="." method="_on_terror_1_winning_bl"]

@@ -21,7 +21,7 @@ func nextlevel():
 func _physics_process(_delta):
 	if fullcount == (fullcountfull - 1):
 		Text1.visible = true
-	elif fullcount == (fullcountfull - 4 ):
+	elif fullcount == (fullcountfull - 4):
 		Text2.visible = true
 	elif fullcount == (fullcountfull -2):
 		pic.visible = true
