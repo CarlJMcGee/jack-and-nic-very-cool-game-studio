@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://de10cffdqxukf"]
+[gd_scene load_steps=21 format=3 uid="uid://de10cffdqxukf"]
 
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/MainScene/MainScene.gd" id="1_bx67t"]
 [ext_resource type="Texture2D" uid="uid://bpgbv8l25ej0q" path="res://NielBreenZapsTerrorists/Art/Breen_Back.png" id="1_sodew"]
@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://b7l1wg12b1wbb" path="res://NielBreenZapsTerrorists/MainScene/individual_parts/Armcannon.tscn" id="15_c3bgt"]
 [ext_resource type="AudioStream" uid="uid://ciw0utik5o3ub" path="res://NielBreenZapsTerrorists/Sound/IconicSuperhero.ogg" id="16_w1u1v"]
 [ext_resource type="Texture2D" uid="uid://cwqpelty3llge" path="res://NielBreenZapsTerrorists/Art/main-qimg-523d2a9190897af9f1d5b6b7866eab47-lq.jpg" id="17_0sxbq"]
+[ext_resource type="Texture2D" uid="uid://b3nmx8o5bpmpt" path="res://cool cat corona/art/Dead.png" id="18_255h6"]
+[ext_resource type="AudioStream" uid="uid://byx08arog2iyl" path="res://cool cat corona/music/CoolCatTheme.mp3" id="19_21kge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4cho"]
 size = Vector2(107, 212.625)
@@ -130,6 +132,26 @@ offset_top = -89.0
 offset_right = -64.0
 offset_bottom = -61.0
 text = "You are alive!"
+
+[node name="Dead" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(579.5, 335.25)
+scale = Vector2(2.69393, 1.55128)
+texture = ExtResource("18_255h6")
+
+[node name="Cat" type="RichTextLabel" parent="Dead"]
+offset_left = -191.0
+offset_top = -188.0
+offset_right = 74.0
+offset_bottom = -69.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+text = "Cool Cat is NOT a terrorist... yet."
+
+[node name="Catsong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_21kge")
+volume_db = 8.433
+pitch_scale = 0.7
 
 [connection signal="youlose" from="RigidBody2D" to="." method="_on_rigid_body_2d_youlose"]
 [connection signal="input_event" from="RigidBody2D/Area2D" to="RigidBody2D" method="_on_area_2d_input_event"]

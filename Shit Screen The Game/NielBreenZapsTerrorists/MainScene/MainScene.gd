@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var Tcounter := 4
 var restart := preload("res://main_menu.tscn")
+var fail := preload("res://NielBreenZapsTerrorists/Leadin/Leadin.tscn")
 """
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
@@ -12,10 +13,14 @@ func _input(event):
 func _physics_process(delta):
 	if Tcounter == 0:
 		youwin()
-		Tcounter == -1
+
 
 func _on_rigid_body_2d_youlose():
-	pass
+	$Dead.visible = true
+	$AudioStreamPlayer.playing = false
+	$Catsong.play()
+	await get_tree().create_timer(4.0).timeout
+	get_tree().change_scene_to_packed(fail)
 
 
 
