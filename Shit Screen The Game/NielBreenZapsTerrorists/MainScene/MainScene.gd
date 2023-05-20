@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var Tcounter := 4
-
+var restart := preload("res://main_menu.tscn")
 """
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
@@ -9,6 +9,10 @@ func _input(event):
 				print("A click!")
 				"""
 
+func _physics_process(delta):
+	if Tcounter == 0:
+		youwin()
+		Tcounter == -1
 
 func _on_rigid_body_2d_youlose():
 	pass
@@ -38,3 +42,9 @@ func _on_terror_4_winning_ur():
 	Tcounter -= 1
 	var test : String = str(Tcounter)
 	print(test)
+
+func youwin():
+	$Winpic.visible = true
+	$AudioStreamPlayer.playing = false
+	await get_tree().create_timer(2.0).timeout
+	get_tree().change_scene_to_packed(restart)
