@@ -117,6 +117,29 @@ texture = ExtResource("11_3vbkm")
 [node name="Armcannon" parent="." instance=ExtResource("15_c3bgt")]
 position = Vector2(286, 116)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_w1u1v")
+autoplay = true
+
+[node name="Catsong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_21kge")
+volume_db = 8.433
+pitch_scale = 0.7
+
+[node name="Bomb" type="Sprite2D" parent="."]
+position = Vector2(1085, 135)
+scale = Vector2(0.372685, 0.386814)
+texture = ExtResource("20_g0y43")
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("21_kdbs2")]
+position = Vector2(1109, 99)
+
+[node name="Bombtime" parent="." instance=ExtResource("22_wviok")]
+offset_left = 1051.0
+offset_top = 169.0
+offset_right = 1098.0
+offset_bottom = 505.0
+
 [node name="Dead" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(579.5, 335.25)
@@ -144,29 +167,6 @@ offset_top = -89.0
 offset_right = -64.0
 offset_bottom = -61.0
 text = "You are alive!"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("16_w1u1v")
-autoplay = true
-
-[node name="Catsong" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("19_21kge")
-volume_db = 8.433
-pitch_scale = 0.7
-
-[node name="Bomb" type="Sprite2D" parent="."]
-position = Vector2(1085, 135)
-scale = Vector2(0.372685, 0.386814)
-texture = ExtResource("20_g0y43")
-
-[node name="GPUParticles2D" parent="." instance=ExtResource("21_kdbs2")]
-position = Vector2(1109, 99)
-
-[node name="Bombtime" parent="." instance=ExtResource("22_wviok")]
-offset_left = 1051.0
-offset_top = 169.0
-offset_right = 1098.0
-offset_bottom = 505.0
 
 [connection signal="youlose" from="RigidBody2D" to="." method="_on_rigid_body_2d_youlose"]
 [connection signal="input_event" from="RigidBody2D/Area2D" to="RigidBody2D" method="_on_area_2d_input_event"]
