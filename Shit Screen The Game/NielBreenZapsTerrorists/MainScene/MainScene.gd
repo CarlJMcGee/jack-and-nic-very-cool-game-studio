@@ -15,6 +15,7 @@ func _input(event):
 func _physics_process(delta):
 	if Tcounter == 0:
 		youwin()
+		Tcounter = 4
 
 
 func _on_rigid_body_2d_youlose():
@@ -30,28 +31,32 @@ func _on_rigid_body_2d_youlose():
 func _on_terror_1_winning_bl():
 	Tcounter -= 1
 	var test : String = str(Tcounter)
-	print(test)
 
 
 func _on_terror_2_winning_br():
 	Tcounter -= 1
 	var test : String = str(Tcounter)
-	print(test)
+
 
 
 func _on_terror_3_winning_um():
 	Tcounter -= 1
 	var test : String = str(Tcounter)
-	print(test)
+
 
 
 func _on_terror_4_winning_ur():
 	Tcounter -= 1
 	var test : String = str(Tcounter)
-	print(test)
+
 
 func youwin():
 	$Winpic.visible = true
-	$AudioStreamPlayer.playing = false
-	await get_tree().create_timer(2.0).timeout
+	$AudioStreamPlayer.stop()
+	$Winsound.play()
+	
+	
+
+
+func _on_winsound_finished():
 	get_tree().change_scene_to_packed(restart)
