@@ -4,7 +4,6 @@ extends Node2D
 var restart := preload("res://main_menu.tscn")
 var fail := preload("res://NielBreenZapsTerrorists/Leadin/Leadin.tscn")
 
-var test := 4
 var stopclick := false
 
 signal stopzapping
