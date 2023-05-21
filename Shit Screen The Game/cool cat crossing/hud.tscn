@@ -66,13 +66,31 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -144.0
-offset_top = -168.0
+offset_top = -246.0
 offset_right = 144.0
-offset_bottom = -97.0
+offset_bottom = -163.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_oufdj")
 theme_override_font_sizes/font_size = 50
-text = "Replay?"
+text = "Replay"
+
+[node name="MenuBtn" type="Button" parent="."]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -144.0
+offset_top = -155.0
+offset_right = 144.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_oufdj")
+theme_override_font_sizes/font_size = 50
+text = "Return to Menu"
 
 [connection signal="pressed" from="RestartBtn" to="." method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="MenuBtn" to="." method="_on_menu_btn_pressed"]

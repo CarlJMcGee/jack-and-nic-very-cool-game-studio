@@ -1,4 +1,3 @@
-class_name SceneSwitcher
 extends CanvasLayer
 
 var current_scene = null
