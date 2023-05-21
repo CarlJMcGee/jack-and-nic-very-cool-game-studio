@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpojgxo1it47u"]
+
+[ext_resource type="Script" path="res://global/mad_hatter.gd" id="1_ohnic"]
+
+[node name="MadHatter" type="CanvasLayer"]
+script = ExtResource("1_ohnic")

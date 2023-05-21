@@ -14,11 +14,10 @@ func _ready():
 func _process(delta):
 	pass
 
-
-
-func _on_cool_cat_btn_pressed():
-	get_tree().change_scene_to_packed(minigames['cool_cat_crossing'])
-
 func _on_corona_btn_pressed():
-	get_tree().change_scene_to_packed(minigames['cool_cat_corona'])
-	
+	# get_tree().change_scene_to_packed(minigames['cool_cat_corona'])
+	MadHatter.assign_seat(MadHatter.cool_cat_corona)
+		
+func _on_cool_cat_btn_pressed():
+		# get_tree().change_scene_to_packed(minigames['cool_cat_crossing'])
+		MadHatter.assign_seat(MadHatter.cool_cat_crossing)
