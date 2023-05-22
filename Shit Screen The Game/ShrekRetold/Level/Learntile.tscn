@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://d10xm5jo3rw3f"]
+
+[node name="Learntile" type="TileMap"]
+format = 2
