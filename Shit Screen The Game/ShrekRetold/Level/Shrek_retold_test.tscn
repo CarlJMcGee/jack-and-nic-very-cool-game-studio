@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvuq8lv1a014r"]
+
+[ext_resource type="Texture2D" uid="uid://c76qb2auyqy80" path="res://ShrekRetold/Art/ShrekRetoldWalk_TESTRIGHTONLY.png" id="1_3g35r"]
+
+[sub_resource type="Animation" id="Animation_a876m"]
+resource_name = "WalkingRight"
+length = 2.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShrekRetoldWalkTestrightonly:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.1, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
+
+[sub_resource type="Animation" id="Animation_6ccy4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShrekRetoldWalkTestrightonly:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ujqml"]
+_data = {
+"RESET": SubResource("Animation_6ccy4"),
+"WalkingRight": SubResource("Animation_a876m")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="ShrekRetoldWalkTestrightonly" type="Sprite2D" parent="."]
+position = Vector2(1, -4)
+texture = ExtResource("1_3g35r")
+hframes = 13
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ujqml")
+}
