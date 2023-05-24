@@ -19,11 +19,8 @@ func switch(lvl_path: String):
 
 func _def_switch(lvl_path: String):
 	get_tree().root.get_child(get_child_count() -1).queue_free()
-	print_debug("path: ", lvl_path)
 	var new_scene := load(lvl_path)
-	print_debug("new scene: ", new_scene)
 	current_scene = new_scene.instantiate()
-	print_debug("current scene: ", current_scene)
 	get_tree().root.add_child(current_scene)
 	get_tree().current_scene = current_scene
 
