@@ -25,5 +25,13 @@ offset_right = 704.0
 offset_bottom = 256.0
 text = "Cool Cat Fights Corona Virus"
 
+[node name="Button" type="Button" parent="."]
+offset_left = 451.0
+offset_top = 478.0
+offset_right = 688.0
+offset_bottom = 615.0
+text = "NeilGreen Zaps Terrorists"
+
 [connection signal="pressed" from="CoolCatBtn" to="." method="_on_cool_cat_btn_pressed"]
 [connection signal="pressed" from="CoronaBtn" to="." method="_on_corona_btn_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

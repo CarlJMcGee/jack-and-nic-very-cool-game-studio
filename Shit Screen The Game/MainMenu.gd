@@ -2,8 +2,9 @@ extends Node2D
 
 var minigames := {
 	"cool_cat_corona": preload("res://cool cat corona/Levels/coolcat_level.tscn"),
-	"cool_cat_crossing": preload("res://cool cat crossing/main.tscn")
-}
+	"cool_cat_crossing": preload("res://cool cat crossing/main.tscn"),
+	"nielzap": preload("res://NielBreenZapsTerrorists/Leadin/Leadin.tscn"), 
+	}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,3 +22,7 @@ func _on_corona_btn_pressed():
 func _on_cool_cat_btn_pressed():
 		# get_tree().change_scene_to_packed(minigames['cool_cat_crossing'])
 		MadHatter.assign_seat(MadHatter.cool_cat_crossing)
+	
+func _on_button_pressed():
+	# get_tree().change_scene_to_packed(minigames['nielzap'])
+	MadHatter.assign_seat(MadHatter.nielzap)

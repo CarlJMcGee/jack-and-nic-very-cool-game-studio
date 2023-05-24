@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://fj727qn1nwg0"]
+[gd_scene load_steps=9 format=3 uid="uid://fj727qn1nwg0"]
 
 [ext_resource type="FontFile" uid="uid://dhgwl83pio1in" path="res://NielBreenZapsTerrorists/Art/comic-sans-ms/COMIC.TTF" id="1_d14fj"]
-[ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/Leadin.gd" id="1_dxb6i"]
 [ext_resource type="FontFile" uid="uid://bwipydhm1kdhh" path="res://NielBreenZapsTerrorists/Art/8-BIT WONDER.TTF" id="2_2js4d"]
 [ext_resource type="Texture2D" uid="uid://c8xmcpxpv7cby" path="res://NielBreenZapsTerrorists/Art/mouse.svg" id="3_qpf5h"]
+[ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/countdowntext.gd" id="4_3dpdx"]
+[ext_resource type="Texture2D" uid="uid://djsjdcb0p881o" path="res://NielBreenZapsTerrorists/Art/PureWhiteTexture.png" id="5_vgyop"]
+[ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/Countbar.gd" id="6_kdasu"]
+[ext_resource type="AudioStream" uid="uid://s2xa6rfp3r67" path="res://NielBreenZapsTerrorists/Sound/VERYTEMPaudio.ogg" id="8_6kbwc"]
+[ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/ReplaceMeWithSomethingBetter.gd" id="9_mhq7j"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -16,7 +20,6 @@ offset_right = -5.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_dxb6i")
 
 [node name="Text1" type="RichTextLabel" parent="."]
 visible = false
@@ -65,18 +68,14 @@ text = "Get ready:"
 [node name="countdowntext" type="RichTextLabel" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 629.0
-offset_top = 408.0
-offset_right = 763.0
-offset_bottom = 526.0
+offset_left = 733.0
+offset_top = 406.0
+offset_right = 983.0
+offset_bottom = 524.0
 theme_override_fonts/normal_font = ExtResource("2_2js4d")
 theme_override_font_sizes/normal_font_size = 80
 text = "3"
-
-[node name="Line2D" type="Line2D" parent="."]
-visible = false
-points = PackedVector2Array(605, 523, 778.546, 523, 813, 523)
-width = 30.0
+script = ExtResource("4_3dpdx")
 
 [node name="Mouse" type="Sprite2D" parent="."]
 visible = false
@@ -87,6 +86,31 @@ texture = ExtResource("3_qpf5h")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="countdown" type="Timer" parent="."]
+[node name="Countbar" type="TextureProgressBar" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 601.0
+offset_top = 511.0
+offset_right = 990.0
+offset_bottom = 564.0
+max_value = 3.1
+step = 0.01
+value = 3.1
+nine_patch_stretch = true
+texture_progress = ExtResource("5_vgyop")
+script = ExtResource("6_kdasu")
 
+[node name="ReplaceMeWithSomethingBetter" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_6kbwc")
+script = ExtResource("9_mhq7j")
+
+[node name="Sounddelay" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+autostart = true
+
+[connection signal="soon" from="countdowntext" to="." method="_on_countdowntext_soon"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="countdowntext" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Countbar" method="_on_timer_timeout"]
+[connection signal="timeout" from="Sounddelay" to="ReplaceMeWithSomethingBetter" method="_on_sounddelay_timeout"]
