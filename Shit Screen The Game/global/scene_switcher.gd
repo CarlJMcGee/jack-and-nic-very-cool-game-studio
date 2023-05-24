@@ -1,10 +1,10 @@
 extends CanvasLayer
 
 var current_scene: Node
-@export var main_menu := "res://main_menu.tscn"
-@export var cool_cat_corona := "res://cool cat corona/Levels/coolcat_level.tscn"
-@export var cool_cat_crossing := "res://cool cat crossing/main.tscn"
-@export var nielzap := "res://NielBreenZapsTerrorists/Leadin/Leadin.tscn"
+@export var game_main_menu := "res://main_menu.tscn"
+@export var game_cool_cat_corona := "res://cool cat corona/Levels/coolcat_level.tscn"
+@export var game_cool_cat_crossing := "res://cool cat crossing/main.tscn"
+@export var game_nielzap := "res://NielBreenZapsTerrorists/Leadin/Leadin.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

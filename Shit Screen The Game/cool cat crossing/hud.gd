@@ -25,4 +25,4 @@ func _on_restart_btn_pressed():
 
 
 func _on_menu_btn_pressed():
-	SceneSwitcher.switch(SceneSwitcher.main_menu)
+	SceneSwitcher.switch(SceneSwitcher.game_main_menu)
