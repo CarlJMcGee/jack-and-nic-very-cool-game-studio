@@ -3,7 +3,7 @@ extends Control
 
 var next := preload("res://NielBreenZapsTerrorists/MainScene/MainScene.tscn")
 
-@export var fullcountfull : float = 15
+@export var fullcountfull := 15
 @onready var fullcount = fullcountfull
 @onready var Text1 = $Text1
 @onready var Text2 = $Text2
@@ -23,14 +23,14 @@ func _physics_process(_delta):
 		Text1.visible = true
 	elif fullcount == (fullcountfull - 4):
 		Text2.visible = true
-	elif fullcount == (fullcountfull -2):
+	elif fullcount == (fullcountfull - 2):
 		pic.visible = true
-	elif fullcount == (fullcountfull -5):
+	elif fullcount == (fullcountfull - 5):
 		Text22.visible = true
 	elif fullcount == (fullcountfull - 7):
 		Text3.visible = true
-		now.emit()
-		
+		await get_node("ReplaceMeWithSomethingBetter").finished
+		nextlevel()
 		
 func _on_timer_timeout():
 	fullcount -= 1
