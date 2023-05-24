@@ -15,7 +15,6 @@ func _input(event):
 				"""
 
 func _physics_process(delta):
-	print_debug("Terrorists:", Tcounter)
 	if Tcounter == 0:
 		stopzapping.emit()
 		youwin()

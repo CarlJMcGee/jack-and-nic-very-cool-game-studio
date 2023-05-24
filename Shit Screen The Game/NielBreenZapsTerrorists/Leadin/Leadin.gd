@@ -15,7 +15,8 @@ var next := preload("res://NielBreenZapsTerrorists/MainScene/MainScene.tscn")
 signal now
 
 func nextlevel():
-	get_tree().change_scene_to_packed(next)
+	# get_tree().change_scene_to_packed(next)
+	MadHatter.change_scene_packed(next)
 
 
 func _physics_process(_delta):

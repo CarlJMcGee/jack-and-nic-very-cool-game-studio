@@ -29,7 +29,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4cho"]
 size = Vector2(107, 212.625)
 
-[node name="Node2D" type="Node2D"]
+[node name="ZapMainScene" type="Node2D"]
 script = ExtResource("1_13trc")
 
 [node name="BreenBack" type="Sprite2D" parent="."]

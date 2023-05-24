@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://s2xa6rfp3r67" path="res://NielBreenZapsTerrorists/Sound/VERYTEMPaudio.ogg" id="8_6kbwc"]
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/ReplaceMeWithSomethingBetter.gd" id="9_mhq7j"]
 
-[node name="Control" type="Control"]
+[node name="ZapLeadIn" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
