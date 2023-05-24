@@ -25,4 +25,4 @@ func _on_restart_btn_pressed():
 
 
 func _on_menu_btn_pressed():
-	MadHatter.assign_seat(MadHatter.main_menu)
+	SceneSwitcher.switch(SceneSwitcher.main_menu)

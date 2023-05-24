@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://bwipydhm1kdhh" path="res://NielBreenZapsTerrorists/Art/8-BIT WONDER.TTF" id="2_2js4d"]
 [ext_resource type="Texture2D" uid="uid://c8xmcpxpv7cby" path="res://NielBreenZapsTerrorists/Art/mouse.svg" id="3_qpf5h"]
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/countdowntext.gd" id="4_3dpdx"]
-[ext_resource type="Texture2D" path="res://NielBreenZapsTerrorists/Art/PureWhiteTexture.png" id="5_vgyop"]
+[ext_resource type="Texture2D" uid="uid://djsjdcb0p881o" path="res://NielBreenZapsTerrorists/Art/PureWhiteTexture.png" id="5_vgyop"]
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/Countbar.gd" id="6_kdasu"]
 [ext_resource type="AudioStream" uid="uid://s2xa6rfp3r67" path="res://NielBreenZapsTerrorists/Sound/VERYTEMPaudio.ogg" id="8_6kbwc"]
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/ReplaceMeWithSomethingBetter.gd" id="9_mhq7j"]

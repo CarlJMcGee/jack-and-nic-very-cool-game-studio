@@ -14,14 +14,16 @@ func _ready():
 func _process(delta):
 	pass
 
-func assign_seat(lvl_path: String):
-	call_deferred("_def_assign_seat", lvl_path)
+func switch(lvl_path: String):
+	call_deferred("_def_switch", lvl_path)
 
-func _def_assign_seat(lvl_path: String):
-	print_debug("exiting scene: ", get_tree().root.get_child(get_child_count() -1))
+func _def_switch(lvl_path: String):
 	get_tree().root.get_child(get_child_count() -1).queue_free()
+	print_debug("path: ", lvl_path)
 	var new_scene := load(lvl_path)
+	print_debug("new scene: ", new_scene)
 	current_scene = new_scene.instantiate()
+	print_debug("current scene: ", current_scene)
 	get_tree().root.add_child(current_scene)
 	get_tree().current_scene = current_scene
 

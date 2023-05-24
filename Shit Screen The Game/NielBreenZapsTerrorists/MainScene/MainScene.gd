@@ -68,7 +68,7 @@ func youwin():
 
 func _on_winsound_finished():
 	# get_tree().change_scene_to_packed(restart)
-	MadHatter.assign_seat(MadHatter.main_menu)
+	SceneSwitcher.switch(SceneSwitcher.main_menu)
 
 
 func _on_bombtime_kaboom():
