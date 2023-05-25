@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjekcdn58ce5h"]
+
+[ext_resource type="Texture2D" uid="uid://djsjdcb0p881o" path="res://NielBreenZapsTerrorists/Art/PureWhiteTexture.png" id="1_q3m1v"]
+[ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/Countbar.gd" id="2_krxq3"]
+
+[node name="Bombtime" type="TextureProgressBar"]
+offset_left = -24.0
+offset_top = 2.0
+offset_right = 23.0
+offset_bottom = 338.0
+max_value = 7.0
+step = 0.01
+value = 7.0
+fill_mode = 2
+nine_patch_stretch = true
+texture_progress = ExtResource("1_q3m1v")
+script = ExtResource("2_krxq3")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="kaboom" from="." to="." method="_on_kaboom"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

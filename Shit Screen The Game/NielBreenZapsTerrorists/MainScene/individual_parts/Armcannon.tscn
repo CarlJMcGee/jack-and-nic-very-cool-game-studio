@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7l1wg12b1wbb"]
+
+[ext_resource type="Script" path="res://Armcannon.gd" id="1_fyjrd"]
+[ext_resource type="Texture2D" uid="uid://dsgkyo4qca5ak" path="res://NielBreenZapsTerrorists/Art/Zap.png" id="3_jg03g"]
+[ext_resource type="Texture2D" uid="uid://ciht6encexena" path="res://NielBreenZapsTerrorists/Art/Arm.png" id="3_y8sgy"]
+[ext_resource type="AudioStream" uid="uid://b1ji5nu1m0mmr" path="res://NielBreenZapsTerrorists/Sound/Zap.wav" id="4_xxqra"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_fyjrd")
+
+[node name="Zap" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(281, -12)
+rotation = -1.57079
+texture = ExtResource("3_jg03g")
+
+[node name="Arm" type="Sprite2D" parent="."]
+position = Vector2(55, -6)
+rotation = -1.57079
+scale = Vector2(0.29012, 0.284849)
+texture = ExtResource("3_y8sgy")
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_xxqra")

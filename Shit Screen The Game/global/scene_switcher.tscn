@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://8458114m3ee7"]
+
+[ext_resource type="Script" path="res://global/scene_switcher.gd" id="1_luh85"]
+
+[node name="SceneSwitcher" type="CanvasLayer"]
+script = ExtResource("1_luh85")

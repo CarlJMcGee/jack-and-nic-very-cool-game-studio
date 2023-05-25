@@ -15,14 +15,14 @@ func _process(delta):
 func clearScreen():
 	$HUD.get_node("WinLabel").hide()
 	$HUD.get_node("LoseLabel").hide()
-	$HUD.get_node("RestartBtn").hide()
+	$HUD.hide_btns()
 	$Player.hide()
 
 func game_over():
 	$CarTimer.stop()
 	$HUD.get_node("LoseLabel").show()
 	$Butch.get_node("AnimatedSprite2D").play("laugh")
-	$HUD.get_node("RestartBtn").show()
+	$HUD.show_btns()
 
 func you_win():
 	$CarTimer.stop()
@@ -30,7 +30,7 @@ func you_win():
 		if is_instance_valid(car):
 			car.queue_free()
 	$HUD.get_node("WinLabel").show()
-	$HUD.get_node("RestartBtn").show()
+	$HUD.show_btns()
 	
 func new_game():
 	clearScreen()

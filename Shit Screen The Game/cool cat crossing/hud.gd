@@ -12,6 +12,17 @@ func _ready():
 func _process(delta):
 	pass
 
+func show_btns():
+	$RestartBtn.show()
+	$MenuBtn.show()
+
+func hide_btns():
+	$RestartBtn.hide()
+	$MenuBtn.hide()
 
 func _on_restart_btn_pressed():
 	reset.emit()
+
+
+func _on_menu_btn_pressed():
+	SceneSwitcher.switch(SceneSwitcher.game_main_menu)
