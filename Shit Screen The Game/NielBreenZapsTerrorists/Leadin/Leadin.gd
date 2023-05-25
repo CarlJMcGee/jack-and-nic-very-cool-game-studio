@@ -30,6 +30,8 @@ func _physics_process(_delta):
 		Text22.visible = true
 	elif fullcount == (fullcountfull - 7):
 		Text3.visible = true
+		$Countbar.visible = true
+		$countdowntext.visible = true
 		await get_node("ReplaceMeWithSomethingBetter").finished
 		nextlevel()
 		
