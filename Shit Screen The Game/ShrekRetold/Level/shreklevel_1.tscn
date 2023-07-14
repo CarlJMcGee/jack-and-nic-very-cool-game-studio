@@ -1,20 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwhemx0amhv67"]
+[gd_scene load_steps=5 format=3 uid="uid://bwhemx0amhv67"]
 
 [ext_resource type="PackedScene" uid="uid://d10xm5jo3rw3f" path="res://ShrekRetold/Level/Learntile.tscn" id="1_1j47i"]
+[ext_resource type="Script" path="res://ShrekRetold/Level/shreklevel_1.gd" id="1_xwci8"]
 [ext_resource type="PackedScene" uid="uid://cvuq8lv1a014r" path="res://ShrekRetold/Level/Shrek_retold_test.tscn" id="2_umu08"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvvry"]
 size = Vector2(52, 37)
 
 [node name="Shreklevel1" type="Node2D"]
+script = ExtResource("1_xwci8")
 
 [node name="Learntile" parent="." instance=ExtResource("1_1j47i")]
-
-[node name="CharacterBody2D" parent="." groups=["Player"] instance=ExtResource("2_umu08")]
-position = Vector2(594, 425)
 
 [node name="Exit" type="Area2D" parent="." groups=["Exit"]]
 
 [node name="Exitshape" type="CollisionShape2D" parent="Exit" groups=["Exit"]]
 position = Vector2(575, 70.5)
 shape = SubResource("RectangleShape2D_kvvry")
+
+[node name="Shrek" parent="." groups=["Player"] instance=ExtResource("2_umu08")]
+position = Vector2(589, 428)
+
+[connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
