@@ -10,11 +10,11 @@ size = Vector2(52, 37)
 
 [node name="Learntile" parent="." instance=ExtResource("1_1j47i")]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_umu08")]
+[node name="CharacterBody2D" parent="." groups=["Player"] instance=ExtResource("2_umu08")]
 position = Vector2(594, 425)
 
-[node name="Exit" type="Area2D" parent="."]
+[node name="Exit" type="Area2D" parent="." groups=["Exit"]]
 
-[node name="Exitshape" type="CollisionShape2D" parent="Exit"]
+[node name="Exitshape" type="CollisionShape2D" parent="Exit" groups=["Exit"]]
 position = Vector2(575, 70.5)
 shape = SubResource("RectangleShape2D_kvvry")

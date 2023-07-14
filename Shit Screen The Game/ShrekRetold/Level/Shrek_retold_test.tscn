@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvuq8lv1a014r"]
+[gd_scene load_steps=7 format=3 uid="uid://cvuq8lv1a014r"]
 
 [ext_resource type="Texture2D" uid="uid://c76qb2auyqy80" path="res://ShrekRetold/Art/ShrekRetoldWalk_TESTRIGHTONLY.png" id="1_3g35r"]
+[ext_resource type="Script" path="res://ShrekRetold/Level/Shrek_retold_test.gd" id="1_ydudo"]
 
 [sub_resource type="Animation" id="Animation_6ccy4"]
 length = 0.001
@@ -44,6 +45,8 @@ _data = {
 size = Vector2(60, 50)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_ydudo")
+move_speed = 150.0
 
 [node name="ShrekRetoldWalkTestrightonly" type="Sprite2D" parent="."]
 position = Vector2(1, -4)
