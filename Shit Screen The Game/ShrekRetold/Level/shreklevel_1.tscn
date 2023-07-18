@@ -11,14 +11,16 @@ size = Vector2(52, 37)
 script = ExtResource("1_xwci8")
 
 [node name="Learntile" parent="." instance=ExtResource("1_1j47i")]
+layer_2/z_index = 2
+
+[node name="Shrek" parent="Learntile" groups=["Player"] instance=ExtResource("2_umu08")]
+z_as_relative = false
+position = Vector2(589, 428)
 
 [node name="Exit" type="Area2D" parent="." groups=["Exit"]]
 
 [node name="Exitshape" type="CollisionShape2D" parent="Exit" groups=["Exit"]]
 position = Vector2(575, 70.5)
 shape = SubResource("RectangleShape2D_kvvry")
-
-[node name="Shrek" parent="." groups=["Player"] instance=ExtResource("2_umu08")]
-position = Vector2(589, 428)
 
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
