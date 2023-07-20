@@ -2,7 +2,9 @@ extends CharacterBody2D
 @export var move_speed := 25
 @export var move_target: Marker2D
 @export var nav_agent: NavigationAgent2D
-var movement_target_position: Vector2 = move_target.global_position
+
+#test
+var testing: Vector2 = Vector2(60.0, 180.0)
 
 func _ready():
 	nav_agent.path_desired_distance = 4.0
@@ -14,10 +16,10 @@ func _ready():
 
 func actor_setup():
 	await get_tree().physics_frame
-	set_movement_target(movement_target_position)
+	set_movement_target(testing)
 
 func set_movement_target(movement_target: Vector2):
-	nav_agent.target_position = movement_target_position
+	nav_agent.target_position = movement_target
 
 
 func _physics_process(_delta):
