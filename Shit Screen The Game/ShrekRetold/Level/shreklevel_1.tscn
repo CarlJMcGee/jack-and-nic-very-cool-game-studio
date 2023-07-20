@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwhemx0amhv67"]
+[gd_scene load_steps=11 format=3 uid="uid://bwhemx0amhv67"]
 
 [ext_resource type="PackedScene" uid="uid://d10xm5jo3rw3f" path="res://ShrekRetold/Level/Learntile.tscn" id="1_1j47i"]
 [ext_resource type="Script" path="res://ShrekRetold/Level/shreklevel_1.gd" id="1_xwci8"]
 [ext_resource type="PackedScene" uid="uid://cvuq8lv1a014r" path="res://ShrekRetold/Level/Shrek_retold_test.tscn" id="2_umu08"]
 [ext_resource type="Texture2D" uid="uid://bis31a3v0lcvh" path="res://ShrekRetold/Art/Wall - Stone 1 64x64.png" id="4_2u7cm"]
 [ext_resource type="Texture2D" uid="uid://c7g2goxa4peoh" path="res://ShrekRetold/Art/Wall - Stone 1 64x64_alpha.png" id="5_g0r5t"]
+[ext_resource type="PackedScene" uid="uid://js78jm3lk35e" path="res://ShrekRetold/Level/EnemyFarq.tscn" id="6_0lkub"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lljn1"]
 texture = ExtResource("4_2u7cm")
@@ -793,5 +794,16 @@ layer_0/tile_data = PackedInt32Array(1245195, 1048577, 22, 1245196, 1114113, 22,
 [node name="Exitshape" type="CollisionShape2D" parent="Exit" groups=["Exit"]]
 position = Vector2(575, 70.5)
 shape = SubResource("RectangleShape2D_kvvry")
+
+[node name="Farq" parent="." node_paths=PackedStringArray("move_target", "nav_agent") instance=ExtResource("6_0lkub")]
+position = Vector2(225, 221)
+move_target = NodePath("../NavTarget")
+nav_agent = NodePath("NavigationAgent2D2")
+
+[node name="NavigationAgent2D2" type="NavigationAgent2D" parent="Farq"]
+debug_enabled = true
+
+[node name="NavTarget" type="Marker2D" parent="."]
+position = Vector2(546, 458)
 
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
