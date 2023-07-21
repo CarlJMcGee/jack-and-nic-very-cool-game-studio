@@ -2,6 +2,13 @@ extends CharacterBody2D
 
 var can_move : = true
 @export var move_speed : float = 2
+signal target
+@onready var shrek = $Marker2D
+var location : Vector2 = Vector2(0, 0)
+
+func _ready():
+	location = shrek.global_position
+	emit_signal("target", location)
 
 func _physics_process(_delta):
 	if can_move == true:

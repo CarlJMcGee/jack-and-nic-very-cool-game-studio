@@ -1,7 +1,10 @@
 extends CharacterBody2D
 @export var move_speed := 25
-@export var move_target: Marker2D
+
+var move_target : Node2D = null
 @export var nav_agent: NavigationAgent2D
+
+
 
 #test
 var testing: Vector2 = Vector2(60.0, 180.0)
@@ -9,7 +12,10 @@ var testing: Vector2 = Vector2(60.0, 180.0)
 func _ready():
 	nav_agent.path_desired_distance = 4.0
 	nav_agent.target_desired_distance = 4.0
+	
 
+
+	#var target_point: Vector2 = move_target.global.position
 	call_deferred("actor_setup")
 	
 
@@ -40,3 +46,7 @@ func _physics_process(_delta):
 		
 		
 		
+
+
+func _on_shrek_target(target):
+	testing = target
