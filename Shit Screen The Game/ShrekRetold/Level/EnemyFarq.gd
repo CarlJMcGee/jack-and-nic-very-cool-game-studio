@@ -47,6 +47,9 @@ func _physics_process(_delta):
 		
 		
 
+func makepath():
+	nav_agent.target_position = testing
 
 func _on_shrek_target(target):
 	testing = target
+	makepath()

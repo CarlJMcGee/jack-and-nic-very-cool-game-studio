@@ -6,9 +6,12 @@ signal target
 @onready var shrek = $Marker2D
 var location : Vector2 = Vector2(0, 0)
 
-func _ready():
+func informfarq():
 	location = shrek.global_position
 	emit_signal("target", location)
+
+func _ready():
+	informfarq()
 
 func _physics_process(_delta):
 	if can_move == true:
@@ -23,3 +26,7 @@ func _physics_process(_delta):
 		$AnimationPlayer.play("WalkingRight")
 	if velocity == Vector2(0,0):
 		$AnimationPlayer.play("RESET")
+
+
+func _on_timer_timeout():
+	informfarq()
