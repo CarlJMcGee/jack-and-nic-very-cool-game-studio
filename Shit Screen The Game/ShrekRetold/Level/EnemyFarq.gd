@@ -12,7 +12,7 @@ var testing: Vector2 = Vector2(60.0, 180.0)
 func _ready():
 	nav_agent.path_desired_distance = 4.0
 	nav_agent.target_desired_distance = 4.0
-	
+	$EnemyFarq/AnimationPlayer.play("Left")
 
 
 	#var target_point: Vector2 = move_target.global.position

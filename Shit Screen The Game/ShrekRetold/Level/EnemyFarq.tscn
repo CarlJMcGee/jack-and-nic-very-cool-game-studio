@@ -3,8 +3,9 @@
 [ext_resource type="Script" path="res://ShrekRetold/Level/EnemyFarq.gd" id="1_ts3nh"]
 [ext_resource type="Texture2D" uid="uid://bcqhd4qnq8kg7" path="res://ShrekRetold/Art/EnemyFarq.png" id="1_uv2n1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jt4u"]
-size = Vector2(26, 41)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8c5hg"]
+radius = 12.0
+height = 46.0
 
 [sub_resource type="Animation" id="Animation_8pjxk"]
 resource_name = "Left"
@@ -48,8 +49,8 @@ _data = {
 script = ExtResource("1_ts3nh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, -0.5)
-shape = SubResource("RectangleShape2D_6jt4u")
+position = Vector2(3, 0)
+shape = SubResource("CapsuleShape2D_8c5hg")
 
 [node name="EnemyFarq" type="Sprite2D" parent="."]
 position = Vector2(3, -2)

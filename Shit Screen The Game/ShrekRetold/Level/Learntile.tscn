@@ -4152,9 +4152,9 @@ sources/1 = SubResource("TileSetAtlasSource_ioqrs")
 sources/2 = SubResource("TileSetAtlasSource_8smpy")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_68tle"]
-vertices = PackedVector2Array(243, 384, 443, 416, 446, 499, 203, 500, 186, 483, 186, 385, 672, 500, 512, 498, 515, 419, 671, 386, 1012, 154, 1017, 500, 735, 497, 735, 384, 191, 161, 243, 336, 186, 334)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(14, 10, 13, 9), PackedInt32Array(14, 9, 8, 1, 15), PackedInt32Array(15, 16, 14), PackedInt32Array(0, 15, 1)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(191, 161, 1012, 154, 1017, 500, 735, 497, 735, 384, 671, 386, 672, 500, 512, 498, 515, 419, 443, 416, 446, 499, 203, 500, 186, 483, 186, 385, 243, 384, 243, 336, 186, 334)])
+vertices = PackedVector2Array(924, 451, 1017, 500, 735, 497, 834, 459, 1015, 153, 945, 289, 928, 228, 275, 156, 320, 227, 921, 388, 675, 427, 523, 499, 519, 425, 735, 426, 837, 388, 385, 289, 451, 424, 383, 449, 444, 498, 316, 449, 382, 508, 342, 507, 243, 384, 310, 507, 203, 500, 186, 483, 186, 385, 186, 334, 188, 157, 243, 336)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 1, 5, 6), PackedInt32Array(7, 4, 6, 8), PackedInt32Array(5, 1, 0, 9), PackedInt32Array(10, 11, 12), PackedInt32Array(3, 2, 13, 14), PackedInt32Array(15, 5, 9, 14), PackedInt32Array(15, 14, 13, 10, 12, 16), PackedInt32Array(17, 15, 16, 18), PackedInt32Array(19, 17, 18, 20, 21), PackedInt32Array(22, 19, 21, 23, 24, 25, 26), PackedInt32Array(27, 28, 7, 8, 29), PackedInt32Array(29, 8, 19, 22)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(188, 157, 275, 156, 1015, 153, 1017, 500, 735, 497, 735, 426, 675, 427, 523, 499, 519, 425, 451, 424, 444, 498, 382, 508, 342, 507, 310, 507, 203, 500, 186, 483, 186, 385, 243, 384, 243, 336, 186, 334), PackedVector2Array(320, 227, 928, 228, 945, 289, 385, 289, 383, 449, 316, 449), PackedVector2Array(837, 388, 834, 459, 924, 451, 921, 388)])
 
 [node name="Learntile" type="TileMap"]
 tile_set = SubResource("TileSet_xptxw")
