@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvuq8lv1a014r"]
+[gd_scene load_steps=10 format=3 uid="uid://cvuq8lv1a014r"]
 
 [ext_resource type="Texture2D" uid="uid://c76qb2auyqy80" path="res://ShrekRetold/Art/ShrekRetoldWalk_TESTRIGHTONLY.png" id="1_3g35r"]
 [ext_resource type="Script" path="res://ShrekRetold/Level/Shrek_retold_test.gd" id="1_ydudo"]
@@ -35,9 +35,31 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 }
 
+[sub_resource type="Animation" id="Animation_1odut"]
+resource_name = "WalkingLeft"
+
+[sub_resource type="Animation" id="Animation_5chi5"]
+resource_name = "WalkingLeftCheat"
+length = 2.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShrekRetoldWalkTestrightonly:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.1, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ujqml"]
 _data = {
 "RESET": SubResource("Animation_6ccy4"),
+"WalkingLeft": SubResource("Animation_1odut"),
+"WalkingLeftCheat": SubResource("Animation_5chi5"),
 "WalkingRight": SubResource("Animation_a876m")
 }
 
@@ -48,6 +70,7 @@ radius = 32.0
 size = Vector2(52, 49)
 
 [node name="Shrek" type="CharacterBody2D"]
+scale = Vector2(-1, 1)
 script = ExtResource("1_ydudo")
 move_speed = 150.0
 

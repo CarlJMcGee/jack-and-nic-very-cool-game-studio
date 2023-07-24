@@ -27,6 +27,14 @@ func _physics_process(_delta):
 		velocity = input_direction * move_speed
 		move_and_slide()
 		$AnimationPlayer.play("WalkingRight")
+		""" Only works if parent is a pure Node2D
+		if abs(input_direction.x) >= 0.001:
+			scale.x *= sign(input_direction.x)
+		"""
+		if input_direction.x > 0.001:
+			$ShrekRetoldWalkTestrightonly.flip_h = 1
+		elif input_direction.x < 0:
+			$ShrekRetoldWalkTestrightonly.flip_h = 0
 	if velocity == Vector2(0,0):
 		$AnimationPlayer.play("RESET")
 

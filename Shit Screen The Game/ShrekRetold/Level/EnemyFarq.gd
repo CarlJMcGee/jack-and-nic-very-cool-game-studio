@@ -40,12 +40,14 @@ func _physics_process(_delta):
 	new_velocity = new_velocity.normalized()
 	new_velocity = new_velocity * move_speed
 	velocity = new_velocity
+	if new_velocity.x > 0.001:
+			$EnemyFarq.flip_h = 0
+	elif new_velocity.x < 0:
+			$EnemyFarq.flip_h = 1
+	
 	
 	move_and_slide()
-		
-		
-		
-		
+
 
 func makepath():
 	nav_agent.target_position = testing
