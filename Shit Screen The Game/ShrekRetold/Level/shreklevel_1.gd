@@ -6,3 +6,9 @@ func _on_exit_body_entered(body):
 	if body.is_in_group("Player"):
 		print("You win!")
 		
+
+
+func _on_shrek_dead():
+	print("LOSING TIME")
+
+	

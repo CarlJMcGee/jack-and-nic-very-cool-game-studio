@@ -6,6 +6,9 @@ signal target
 @onready var shrek = $Marker2D
 var location : Vector2 = Vector2(0, 0)
 
+signal dead
+var dead_emitted := false
+
 func informfarq():
 	location = shrek.global_position
 	emit_signal("target", location)
@@ -30,3 +33,11 @@ func _physics_process(_delta):
 
 func _on_timer_timeout():
 	informfarq()
+
+
+func _on_area_2d_body_entered(body):
+	#print(body.get_groups()) THIS WAS USEFUL FOR TESTING!
+	if body.is_in_group("Badguy"):
+			dead_emitted = true
+			emit_signal("dead")
+			queue_free()
