@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwhemx0amhv67"]
+[gd_scene load_steps=15 format=3 uid="uid://bwhemx0amhv67"]
 
 [ext_resource type="PackedScene" uid="uid://d10xm5jo3rw3f" path="res://ShrekRetold/Level/Learntile.tscn" id="1_1j47i"]
 [ext_resource type="Script" path="res://ShrekRetold/Level/shreklevel_1.gd" id="1_xwci8"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://bis31a3v0lcvh" path="res://ShrekRetold/Art/Wall - Stone 1 64x64.png" id="4_2u7cm"]
 [ext_resource type="Texture2D" uid="uid://c7g2goxa4peoh" path="res://ShrekRetold/Art/Wall - Stone 1 64x64_alpha.png" id="5_g0r5t"]
 [ext_resource type="PackedScene" uid="uid://js78jm3lk35e" path="res://ShrekRetold/Level/EnemyFarq.tscn" id="6_0lkub"]
+[ext_resource type="PackedScene" uid="uid://cjekcdn58ce5h" path="res://NielBreenZapsTerrorists/MainScene/bombtime.tscn" id="7_5gbb1"]
+[ext_resource type="Script" path="res://NielBreenZapsTerrorists/MainScene/bombtimeShrek.gd" id="8_2c1vk"]
+[ext_resource type="Texture2D" uid="uid://nvhv5qa46l7y" path="res://NielBreenZapsTerrorists/Art/Bomb.svg" id="9_g4fdp"]
+[ext_resource type="PackedScene" uid="uid://bhuw6upo6wf6c" path="res://NielBreenZapsTerrorists/MainScene/Flame_particles_2d.tscn" id="10_ws1c5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lljn1"]
 texture = ExtResource("4_2u7cm")
@@ -806,7 +810,7 @@ nav_agent = NodePath("NavigationAgent2D2")
 debug_enabled = true
 
 [node name="Farq2" parent="." node_paths=PackedStringArray("nav_agent") groups=["Badguy"] instance=ExtResource("6_0lkub")]
-position = Vector2(844, 178)
+position = Vector2(705, 179)
 motion_mode = 1
 wall_min_slide_angle = 0.0
 move_speed = 100
@@ -820,7 +824,28 @@ tile_set = SubResource("TileSet_ldqn0")
 format = 2
 layer_0/tile_data = PackedInt32Array(1245195, 1048577, 22, 1245196, 1114113, 22, 1245197, 1179649, 22, 1245198, 1245185, 22, 1638428, 1048577, 22, 1638429, 1114113, 22, 1638430, 1179649, 22, 1638431, 1245185, 22, 851988, 1048577, 22, 851989, 1114113, 22, 851990, 1179649, 22, 851991, 1245185, 22, 851992, 1048577, 22, 851993, 1114113, 22, 851994, 1179649, 22, 851995, 1245185, 22, 851996, 1048577, 22, 851997, 1114113, 22, 851998, 1179649, 22, 851999, 1245185, 22, 852001, 1048577, 22, 852002, 1114113, 22, 852003, 1179649, 22, 852004, 1245185, 22, 852005, 1048577, 22, 852006, 1114113, 22, 852007, 1179649, 22, 852008, 1245185, 22, 852009, 1048577, 22, 852010, 1114113, 22, 852011, 1179649, 22, 852012, 1245185, 22, 852013, 1048577, 22, 852014, 1114113, 22, 852015, 1179649, 22, 852016, 1245185, 22, 852017, 1048577, 22, 852018, 1114113, 22, 852019, 1179649, 22, 852020, 1245185, 22, 852022, 1048577, 22, 852023, 1114113, 22, 852024, 1179649, 22, 852025, 1245185, 22, 1507381, 1048577, 22, 1507382, 1114113, 22, 1507383, 1179649, 22, 1507384, 1245185, 22, 1638442, 1048577, 22, 1638443, 1114113, 22, 1638444, 1179649, 22, 1638445, 1245185, 22, 1310731, 1048577, 22, 1310732, 1114113, 22, 1310733, 1179649, 22, 1310734, 1245185, 22, 1703964, 1048577, 22, 1703965, 1114113, 22, 1703966, 1179649, 22, 1703967, 1245185, 22, 1703978, 1048577, 22, 1703979, 1114113, 22, 1703980, 1179649, 22, 1703981, 1245185, 22, 1572917, 1048577, 22, 1572918, 1114113, 22, 1572919, 1179649, 22, 1572920, 1245185, 22, 917558, 1048577, 22, 917559, 1114113, 22, 917560, 1179649, 22, 917561, 1245185, 22, 917554, 1048577, 22, 917555, 1114113, 22, 917556, 1179649, 22, 917557, 1245185, 22, 917550, 1048577, 22, 917551, 1114113, 22, 917552, 1179649, 22, 917553, 1245185, 22, 917546, 1048577, 22, 917547, 1114113, 22, 917548, 1179649, 22, 917549, 1245185, 22, 917542, 1048577, 22, 917543, 1114113, 22, 917544, 1179649, 22, 917545, 1245185, 22, 917538, 1048577, 22, 917539, 1114113, 22, 917540, 1179649, 22, 917541, 1245185, 22, 917534, 1245185, 22, 917535, 1114113, 22, 917536, 1179649, 22, 917537, 1245185, 22, 917531, 1245185, 22, 917532, 1114113, 22, 917533, 1179649, 22, 917528, 1179649, 22, 917529, 1245185, 22, 917530, 1179649, 22, 917526, 1179649, 22, 917527, 1245185, 22, 917524, 1048577, 22, 917525, 1114113, 22)
 
+[node name="Bombtime" parent="." instance=ExtResource("7_5gbb1")]
+offset_left = 41.0
+offset_top = 232.0
+offset_right = 88.0
+offset_bottom = 588.0
+max_value = 16.0
+value = 16.0
+script = ExtResource("8_2c1vk")
+
+[node name="Timer2" type="Timer" parent="Bombtime"]
+autostart = true
+
+[node name="Bomb" type="Sprite2D" parent="."]
+position = Vector2(67, 169)
+scale = Vector2(0.372685, 0.386814)
+texture = ExtResource("9_g4fdp")
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("10_ws1c5")]
+position = Vector2(92, 121)
+
 [connection signal="dead" from="Learntile/Shrek" to="." method="_on_shrek_dead"]
 [connection signal="target" from="Learntile/Shrek" to="Farq" method="_on_shrek_target"]
 [connection signal="target" from="Learntile/Shrek" to="Farq2" method="_on_shrek_target"]
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
+[connection signal="timeout" from="Bombtime/Timer2" to="Bombtime" method="_on_timer_2_timeout"]
