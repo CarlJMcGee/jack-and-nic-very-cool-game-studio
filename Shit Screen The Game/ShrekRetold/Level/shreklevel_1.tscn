@@ -879,3 +879,5 @@ stream = ExtResource("15_ppru2")
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
 [connection signal="timeout" from="Bombtime/Timer2" to="Bombtime" method="_on_timer_2_timeout"]
 [connection signal="finished" from="Duloc" to="." method="_on_duloc_finished"]
+[connection signal="finished" from="DulocWin" to="." method="_on_duloc_win_finished"]
+[connection signal="finished" from="DulocLose" to="." method="_on_duloc_lose_finished"]
