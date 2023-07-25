@@ -10,7 +10,7 @@ var stopdouble := false
 func _on_exit_body_entered(body):
 	if body.is_in_group("Player"):
 		if not stopdouble:
-			$bombtime.queue_free()
+			$Bombtime.queue_free()
 			stopdouble = true
 			$Win.visible = true
 			$Duloc.stop()
