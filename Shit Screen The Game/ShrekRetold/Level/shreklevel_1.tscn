@@ -776,7 +776,7 @@ sources/0 = SubResource("TileSetAtlasSource_lljn1")
 sources/1 = SubResource("TileSetAtlasSource_nhf27")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvvry"]
-size = Vector2(52, 37)
+size = Vector2(103, 37)
 
 [node name="Shreklevel1" type="Node2D"]
 position = Vector2(0, -1)
@@ -801,7 +801,7 @@ layer_0/tile_data = PackedInt32Array(1245195, 1048577, 22, 1245196, 1114113, 22,
 [node name="Exit" type="Area2D" parent="." groups=["Exit"]]
 
 [node name="Exitshape" type="CollisionShape2D" parent="Exit" groups=["Exit"]]
-position = Vector2(575, 70.5)
+position = Vector2(578.5, 57)
 shape = SubResource("RectangleShape2D_kvvry")
 
 [node name="Farq" parent="." node_paths=PackedStringArray("nav_agent") groups=["Badguy"] instance=ExtResource("6_0lkub")]
@@ -812,7 +812,6 @@ move_speed = 100
 nav_agent = NodePath("NavigationAgent2D2")
 
 [node name="NavigationAgent2D2" type="NavigationAgent2D" parent="Farq"]
-debug_enabled = true
 
 [node name="Farq2" parent="." node_paths=PackedStringArray("nav_agent") groups=["Badguy"] instance=ExtResource("6_0lkub")]
 position = Vector2(705, 179)
@@ -822,7 +821,6 @@ move_speed = 100
 nav_agent = NodePath("NavigationAgent2D2")
 
 [node name="NavigationAgent2D2" type="NavigationAgent2D" parent="Farq2"]
-debug_enabled = true
 
 [node name="TileMap2" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ldqn0")
