@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bwhemx0amhv67"]
+[gd_scene load_steps=19 format=3 uid="uid://bwhemx0amhv67"]
 
 [ext_resource type="PackedScene" uid="uid://d10xm5jo3rw3f" path="res://ShrekRetold/Level/Learntile.tscn" id="1_1j47i"]
 [ext_resource type="Script" path="res://ShrekRetold/Level/shreklevel_1.gd" id="1_xwci8"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://c7g2goxa4peoh" path="res://ShrekRetold/Art/Wall - Stone 1 64x64_alpha.png" id="5_g0r5t"]
 [ext_resource type="PackedScene" uid="uid://js78jm3lk35e" path="res://ShrekRetold/Level/EnemyFarq.tscn" id="6_0lkub"]
 [ext_resource type="PackedScene" uid="uid://cjekcdn58ce5h" path="res://NielBreenZapsTerrorists/MainScene/bombtime.tscn" id="7_5gbb1"]
-[ext_resource type="Script" path="res://NielBreenZapsTerrorists/MainScene/bombtimeShrek.gd" id="8_2c1vk"]
 [ext_resource type="Texture2D" uid="uid://nvhv5qa46l7y" path="res://NielBreenZapsTerrorists/Art/Bomb.svg" id="9_g4fdp"]
 [ext_resource type="PackedScene" uid="uid://bhuw6upo6wf6c" path="res://NielBreenZapsTerrorists/MainScene/Flame_particles_2d.tscn" id="10_ws1c5"]
 [ext_resource type="Texture2D" uid="uid://77nk4yeicy3b" path="res://ShrekRetold/Art/win.jpg" id="11_wvnhk"]
@@ -838,7 +837,6 @@ offset_right = 88.0
 offset_bottom = 588.0
 max_value = 16.0
 value = 16.0
-script = ExtResource("8_2c1vk")
 
 [node name="Timer2" type="Timer" parent="Bombtime"]
 autostart = true

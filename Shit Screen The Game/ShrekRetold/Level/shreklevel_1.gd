@@ -2,14 +2,15 @@ extends Node2D
 
 #Note: in Debug, you can turn on visible Paths and Navigation to see the path finding.
 
-var tryagain := preload("res://ShrekRetold/Level/LeadinShrek/LeadinShrek.tscn")
-var next := preload("res://main_menu.tscn")
+@onready var tryagain := preload("res://ShrekRetold/Level/LeadinShrek/LeadinShrek.tscn")
+@onready var next := preload("res://main_menu.tscn")
 
 var stopdouble := false
 #Replace print() with actual victory stuff
 func _on_exit_body_entered(body):
 	if body.is_in_group("Player"):
 		if not stopdouble:
+			$bombtime.queue_free()
 			stopdouble = true
 			$Win.visible = true
 			$Duloc.stop()

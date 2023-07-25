@@ -1,7 +1,7 @@
 extends Control
 
 
-var next := preload("res://ShrekRetold/Level/shreklevel_1.tscn")
+@onready var next := preload("res://ShrekRetold/Level/shreklevel_1.tscn")
 
 @export var fullcountfull : float = 15
 @onready var fullcount = fullcountfull
