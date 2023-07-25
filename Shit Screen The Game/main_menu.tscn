@@ -32,6 +32,14 @@ offset_right = 688.0
 offset_bottom = 615.0
 text = "NeilGreen Zaps Terrorists"
 
+[node name="Duloc" type="Button" parent="."]
+offset_left = 454.0
+offset_top = 644.0
+offset_right = 689.0
+offset_bottom = 761.0
+text = "Shrek Retold: Escape Duloc"
+
 [connection signal="pressed" from="CoolCatBtn" to="." method="_on_cool_cat_btn_pressed"]
 [connection signal="pressed" from="CoronaBtn" to="." method="_on_corona_btn_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Duloc" to="." method="_on_duloc_pressed"]

@@ -3,7 +3,8 @@ extends Node2D
 var minigames := {
 	"cool_cat_corona": preload("res://cool cat corona/Levels/coolcat_level.tscn"),
 	"cool_cat_crossing": preload("res://cool cat crossing/main.tscn"),
-	"nielzap": preload("res://NielBreenZapsTerrorists/Leadin/Leadin.tscn"), 
+	"nielzap": preload("res://NielBreenZapsTerrorists/Leadin/Leadin.tscn"),
+	"duloc": preload("res://ShrekRetold/Level/LeadinShrek/LeadinShrek.tscn") 
 	}
 
 # Called when the node enters the scene tree for the first time.
@@ -27,3 +28,7 @@ func _on_corona_btn_pressed():
 
 func _on_button_pressed():
 	get_tree().change_scene_to_packed(minigames['nielzap'])
+
+
+func _on_duloc_pressed():
+	get_tree().change_scene_to_packed(minigames['duloc'])
