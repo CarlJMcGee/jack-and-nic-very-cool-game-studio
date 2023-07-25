@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://fj727qn1nwg0"]
+[gd_scene load_steps=10 format=3 uid="uid://fj727qn1nwg0"]
 
 [ext_resource type="FontFile" uid="uid://dhgwl83pio1in" path="res://NielBreenZapsTerrorists/Art/comic-sans-ms/COMIC.TTF" id="1_d14fj"]
+[ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/Leadin.gd" id="1_ljj65"]
 [ext_resource type="FontFile" uid="uid://bwipydhm1kdhh" path="res://NielBreenZapsTerrorists/Art/8-BIT WONDER.TTF" id="2_2js4d"]
 [ext_resource type="Texture2D" uid="uid://c8xmcpxpv7cby" path="res://NielBreenZapsTerrorists/Art/mouse.svg" id="3_qpf5h"]
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/countdowntext.gd" id="4_3dpdx"]
@@ -20,6 +21,7 @@ offset_right = -5.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ljj65")
 
 [node name="Text1" type="RichTextLabel" parent="."]
 visible = false

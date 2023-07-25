@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cok0sd8mv5ls4"]
+[gd_scene load_steps=10 format=3 uid="uid://cok0sd8mv5ls4"]
 
+[ext_resource type="Script" path="res://ShrekRetold/Level/LeadinShrek/LeadinShrek.gd" id="1_o363p"]
 [ext_resource type="FontFile" uid="uid://dhgwl83pio1in" path="res://NielBreenZapsTerrorists/Art/comic-sans-ms/COMIC.TTF" id="1_r5jmd"]
 [ext_resource type="FontFile" uid="uid://bwipydhm1kdhh" path="res://NielBreenZapsTerrorists/Art/8-BIT WONDER.TTF" id="2_7vdmq"]
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/countdowntext.gd" id="3_22re0"]
-[ext_resource type="Texture2D" uid="uid://c8xmcpxpv7cby" path="res://NielBreenZapsTerrorists/Art/mouse.svg" id="4_23a26"]
 [ext_resource type="Texture2D" uid="uid://djsjdcb0p881o" path="res://NielBreenZapsTerrorists/Art/PureWhiteTexture.png" id="5_77ptn"]
+[ext_resource type="Texture2D" uid="uid://cw27mu74nglt1" path="res://ShrekRetold/Art/ArrowKeysNoBackground.png" id="5_ppink"]
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/Countbar.gd" id="6_454as"]
 [ext_resource type="AudioStream" uid="uid://s2xa6rfp3r67" path="res://NielBreenZapsTerrorists/Sound/VERYTEMPaudio.ogg" id="7_4pfti"]
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/ReplaceMeWithSomethingBetter.gd" id="8_njtmp"]
@@ -20,6 +21,7 @@ offset_right = -5.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_o363p")
 
 [node name="Text1" type="RichTextLabel" parent="."]
 visible = false
@@ -80,7 +82,7 @@ offset_right = 1131.0
 offset_bottom = 425.0
 theme_override_fonts/normal_font = ExtResource("1_r5jmd")
 theme_override_font_sizes/normal_font_size = 71
-text = "Zap the terrorists!"
+text = "Escape safely!"
 
 [node name="67535" type="VScrollBar" parent="Text22"]
 visible = false
@@ -151,7 +153,7 @@ step = 1.0
 visible = false
 position = Vector2(718, 116.5)
 scale = Vector2(0.612613, 0.598194)
-texture = ExtResource("4_23a26")
+texture = ExtResource("5_ppink")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
