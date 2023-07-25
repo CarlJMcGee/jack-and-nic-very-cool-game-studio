@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bwhemx0amhv67"]
+[gd_scene load_steps=20 format=3 uid="uid://bwhemx0amhv67"]
 
 [ext_resource type="PackedScene" uid="uid://d10xm5jo3rw3f" path="res://ShrekRetold/Level/Learntile.tscn" id="1_1j47i"]
 [ext_resource type="Script" path="res://ShrekRetold/Level/shreklevel_1.gd" id="1_xwci8"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://bhuw6upo6wf6c" path="res://NielBreenZapsTerrorists/MainScene/Flame_particles_2d.tscn" id="10_ws1c5"]
 [ext_resource type="Texture2D" uid="uid://77nk4yeicy3b" path="res://ShrekRetold/Art/win.jpg" id="11_wvnhk"]
 [ext_resource type="Texture2D" uid="uid://dheayppsfwv26" path="res://ShrekRetold/Art/lose.jpg" id="12_r86cc"]
+[ext_resource type="AudioStream" uid="uid://c5b7xbpcl88cy" path="res://ShrekRetold/Sound/Dulocsixteensec.ogg" id="13_6dx6v"]
+[ext_resource type="AudioStream" uid="uid://dd5tnj7axulng" path="res://ShrekRetold/Sound/DulocWin.ogg" id="14_1x2mh"]
+[ext_resource type="AudioStream" uid="uid://vy65qks6uebj" path="res://ShrekRetold/Sound/DulocLose.ogg" id="15_ppru2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lljn1"]
 texture = ExtResource("4_2u7cm")
@@ -860,8 +863,19 @@ position = Vector2(577.5, 321.75)
 scale = Vector2(1.9186, 1.34551)
 texture = ExtResource("12_r86cc")
 
+[node name="Duloc" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_6dx6v")
+autoplay = true
+
+[node name="DulocWin" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_1x2mh")
+
+[node name="DulocLose" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_ppru2")
+
 [connection signal="dead" from="Learntile/Shrek" to="." method="_on_shrek_dead"]
 [connection signal="target" from="Learntile/Shrek" to="Farq" method="_on_shrek_target"]
 [connection signal="target" from="Learntile/Shrek" to="Farq2" method="_on_shrek_target"]
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
 [connection signal="timeout" from="Bombtime/Timer2" to="Bombtime" method="_on_timer_2_timeout"]
+[connection signal="finished" from="Duloc" to="." method="_on_duloc_finished"]
