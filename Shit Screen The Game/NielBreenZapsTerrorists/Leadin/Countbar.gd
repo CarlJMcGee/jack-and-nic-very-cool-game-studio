@@ -2,9 +2,11 @@ extends TextureProgressBar
 
 signal kaboom
 var stop := false
+var finalbar := false
 func _on_timer_timeout():
 	if value > 0:
-		value -= 1
+		if finalbar == true:
+			value -= 1
 
 
 
@@ -17,3 +19,8 @@ func _physics_process(delta):
 
 func _on_kaboom():
 	stop = true
+
+
+func _on_control_now():
+	finalbar = true
+	visible = true
