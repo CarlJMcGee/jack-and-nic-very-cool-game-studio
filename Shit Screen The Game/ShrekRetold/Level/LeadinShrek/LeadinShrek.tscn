@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cok0sd8mv5ls4"]
 
-[ext_resource type="Script" path="res://ShrekRetold/Level/LeadinShrek/LeadinShrek.gd" id="1_o363p"]
+[ext_resource type="Script" path="res://ShrekRetold/Level/LeadinShrek/LeadinShrek.gd" id="1_plqbh"]
 [ext_resource type="FontFile" uid="uid://dhgwl83pio1in" path="res://NielBreenZapsTerrorists/Art/comic-sans-ms/COMIC.TTF" id="1_r5jmd"]
 [ext_resource type="FontFile" uid="uid://bwipydhm1kdhh" path="res://NielBreenZapsTerrorists/Art/8-BIT WONDER.TTF" id="2_7vdmq"]
 [ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/countdowntext.gd" id="3_22re0"]
@@ -21,7 +21,7 @@ offset_right = -5.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_o363p")
+script = ExtResource("1_plqbh")
 
 [node name="Text1" type="RichTextLabel" parent="."]
 visible = false
