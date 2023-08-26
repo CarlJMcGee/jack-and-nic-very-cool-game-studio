@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://wmiffuolxnbv"]
+
+[ext_resource type="PackedScene" uid="uid://iffrdn4iexjv" path="res://HappyMacWheel/characters/child.tscn" id="1_ugfcm"]
+
+[node name="road" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(4, 0)
+polygon = PackedVector2Array(-1038, -323, -778, -331, -761, 37, 325, 37, 1024, 181, 1301, 178, 1460, 237, 1672, 478, 1873, 845, 1943, 1021, 2280, 1026, 2438, 775, 2450, 1411, -1012, 1267)
+
+[node name="wheel_kid" parent="." instance=ExtResource("1_ugfcm")]
+position = Vector2(9, -104)
