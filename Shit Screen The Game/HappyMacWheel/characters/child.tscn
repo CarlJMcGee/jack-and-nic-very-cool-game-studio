@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://iffrdn4iexjv"]
+[gd_scene load_steps=2 format=3 uid="uid://iffrdn4iexjv"]
 
-[node name="child" type="RigidBody2D"]
+[ext_resource type="Texture2D" uid="uid://bttwtvm8rx1ty" path="res://HappyMacWheel/Art/EricFromMacNMe.png" id="1_rocc8"]
+
+[node name="wheel_kid" type="RigidBody2D"]
+
+[node name="EricFromMacNMe" type="Sprite2D" parent="."]
+position = Vector2(2, 2.00001)
+scale = Vector2(0.4819, 0.486945)
+texture = ExtResource("1_rocc8")
+flip_h = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-21, -72, 9, -88, 28, -76, 29, -45, 17, -41, 23, 3, 52, 26, 43, 37, 6, 45, -42, 33, -51, -17, -20, -77)
