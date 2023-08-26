@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://buelqkgx0kyos"]
+
+[node name="wheel" type="RigidBody2D" groups=["player"]]

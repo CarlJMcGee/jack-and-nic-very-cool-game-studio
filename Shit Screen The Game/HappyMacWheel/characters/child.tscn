@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bttwtvm8rx1ty" path="res://HappyMacWheel/Art/EricFromMacNMe.png" id="1_rocc8"]
 
-[node name="wheel_kid" type="RigidBody2D"]
+[node name="wheel_kid" type="RigidBody2D" groups=["player"]]
 
 [node name="EricFromMacNMe" type="Sprite2D" parent="."]
 position = Vector2(2, 2.00001)
