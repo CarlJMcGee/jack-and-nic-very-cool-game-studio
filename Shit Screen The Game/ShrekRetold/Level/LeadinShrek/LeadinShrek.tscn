@@ -1,0 +1,192 @@
+[gd_scene load_steps=10 format=3 uid="uid://cok0sd8mv5ls4"]
+
+[ext_resource type="Script" path="res://ShrekRetold/Level/LeadinShrek/LeadinShrek.gd" id="1_plqbh"]
+[ext_resource type="FontFile" uid="uid://dhgwl83pio1in" path="res://NielBreenZapsTerrorists/Art/comic-sans-ms/COMIC.TTF" id="1_r5jmd"]
+[ext_resource type="FontFile" uid="uid://bwipydhm1kdhh" path="res://NielBreenZapsTerrorists/Art/8-BIT WONDER.TTF" id="2_7vdmq"]
+[ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/countdowntext.gd" id="3_22re0"]
+[ext_resource type="Texture2D" uid="uid://djsjdcb0p881o" path="res://NielBreenZapsTerrorists/Art/PureWhiteTexture.png" id="5_77ptn"]
+[ext_resource type="Texture2D" uid="uid://cw27mu74nglt1" path="res://ShrekRetold/Art/ArrowKeysNoBackground.png" id="5_ppink"]
+[ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/Countbar.gd" id="6_454as"]
+[ext_resource type="AudioStream" uid="uid://s2xa6rfp3r67" path="res://NielBreenZapsTerrorists/Sound/VERYTEMPaudio.ogg" id="7_4pfti"]
+[ext_resource type="Script" path="res://NielBreenZapsTerrorists/Leadin/ReplaceMeWithSomethingBetter.gd" id="8_njtmp"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 9.0
+offset_right = -5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_plqbh")
+
+[node name="Text1" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 232.0
+offset_top = 114.0
+offset_right = 664.0
+offset_bottom = 274.0
+theme_override_fonts/normal_font = ExtResource("1_r5jmd")
+theme_override_font_sizes/normal_font_size = 71
+text = "Controls: "
+
+[node name="67533" type="VScrollBar" parent="Text1"]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="64891" type="VScrollBar" parent="Text1"]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="Text2" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 225.0
+offset_top = 262.0
+offset_right = 452.0
+offset_bottom = 422.0
+theme_override_fonts/normal_font = ExtResource("1_r5jmd")
+theme_override_font_sizes/normal_font_size = 71
+text = "Goal:"
+
+[node name="67534" type="VScrollBar" parent="Text2"]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="64892" type="VScrollBar" parent="Text2"]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="Text22" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 430.0
+offset_top = 265.0
+offset_right = 1131.0
+offset_bottom = 425.0
+theme_override_fonts/normal_font = ExtResource("1_r5jmd")
+theme_override_font_sizes/normal_font_size = 71
+text = "Escape safely!"
+
+[node name="67535" type="VScrollBar" parent="Text22"]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="64893" type="VScrollBar" parent="Text22"]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="Text3" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 232.0
+offset_top = 409.0
+offset_right = 598.0
+offset_bottom = 569.0
+theme_override_fonts/normal_font = ExtResource("1_r5jmd")
+theme_override_font_sizes/normal_font_size = 71
+text = "Get ready:"
+
+[node name="67536" type="VScrollBar" parent="Text3"]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="64894" type="VScrollBar" parent="Text3"]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="countdowntext" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 733.0
+offset_top = 406.0
+offset_right = 983.0
+offset_bottom = 524.0
+theme_override_fonts/normal_font = ExtResource("2_7vdmq")
+theme_override_font_sizes/normal_font_size = 80
+text = "3"
+script = ExtResource("3_22re0")
+
+[node name="67537" type="VScrollBar" parent="countdowntext"]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="64895" type="VScrollBar" parent="countdowntext"]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="Mouse" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(660, 149)
+scale = Vector2(0.612613, 0.598194)
+texture = ExtResource("5_ppink")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Countbar" type="TextureProgressBar" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 601.0
+offset_top = 511.0
+offset_right = 990.0
+offset_bottom = 564.0
+max_value = 3.1
+step = 0.01
+value = 3.1
+nine_patch_stretch = true
+texture_progress = ExtResource("5_77ptn")
+script = ExtResource("6_454as")
+
+[node name="ReplaceMeWithSomethingBetter" type="AudioStreamPlayer2D" parent="."]
+visible = false
+stream = ExtResource("7_4pfti")
+script = ExtResource("8_njtmp")
+
+[node name="Sounddelay" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+autostart = true
+
+[connection signal="now" from="." to="countdowntext" method="_on_control_now"]
+[connection signal="now" from="." to="Countbar" method="_on_control_now"]
+[connection signal="soon" from="countdowntext" to="." method="_on_countdowntext_soon" flags=18]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout" flags=18]
+[connection signal="timeout" from="Timer" to="countdowntext" method="_on_timer_timeout" flags=18]
+[connection signal="timeout" from="Timer" to="Countbar" method="_on_timer_timeout" flags=18]
+[connection signal="kaboom" from="Countbar" to="Countbar" method="_on_kaboom"]
+[connection signal="timeout" from="Sounddelay" to="ReplaceMeWithSomethingBetter" method="_on_sounddelay_timeout" flags=18]
